@@ -44,7 +44,9 @@ if ( ! function_exists( 'mayumi_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'mayumi' ),
+			'menu-1' => esc_html__( 'Header', 'mayumi' ),
+			'menu-2' => esc_html__( 'Footer', 'mayumi' ),
+			'menu-3' => esc_html__( 'Social', 'mayumi' ),
 		) );
 
 		/*
