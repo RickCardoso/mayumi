@@ -20,3 +20,36 @@ input[type="submit"] {
 		border-color: $color__border-button-focus;
 	}
 }
+
+.btn-std {
+	@include crossBorder(2px);
+	@include crossTransition(all .3s);
+	text-transform: uppercase;
+	padding: 0.8215em 2.17125em;
+}
+
+.btn-blue {
+	background-color: #33b8c8;
+	color: #213133;
+	font-size: 0.875em;
+	font-weight: 700;
+	@include crossShadow(3.7px 3.7px 18px 0 rgba(119, 119, 119, 0.35));
+	&:hover,
+	&:focus {
+		outline: none;
+		color: #213133;
+		background-color: lighten(#33b8c8, 5%);
+		@include crossShadow(3.7px 3.7px 18px 0 rgba(119, 119, 119, 0.55));
+	}
+}
+
+.btn-toggler {
+	color: #000;
+	border: none;
+	padding: 0.5em 1em;
+	&:hover,
+	&focus,
+	&:active {
+		color: $color__link-hover;
+	}
+}
