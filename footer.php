@@ -65,7 +65,7 @@
 
 	    endif; ?>
 
-			</div><!-- social links -->
+			</div><!-- .social-menu -->
 		</nav><!-- .footer-navigation -->
 
 		<div class="site-info">

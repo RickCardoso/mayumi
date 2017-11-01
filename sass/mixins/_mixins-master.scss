@@ -37,6 +37,13 @@
   transition: $trans;
 }
 
+@mixin crossAnimation($anim) {
+  -webkit-animation: $anim;
+  -moz-animation: $anim;
+  -o-animation: $anim;
+  animation: $anim;
+}
+
 @mixin crossTransform($trans) {
   -webkit-transform: $trans;
   -moz-transform: $trans;

@@ -1,0 +1,17 @@
+@keyframes arrowRotate {
+  0%   {
+    @include crossTransform(rotate(-45deg) translateX(-50%));
+  }
+  25%   {
+    @include crossTransform(rotate(-135deg) translateX(-50%));
+  }
+  50%   {
+    @include crossTransform(rotate(-215deg) translateX(-50%));
+  }
+  75%   {
+    @include crossTransform(rotate(-305deg) translateX(-50%));
+  }
+  100%   {
+    @include crossTransform(rotate(-45deg) translateX(-50%));
+  }
+}
