@@ -1,3 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="29" height="29" viewBox="0 0 29 29">
-  <image xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB0AAAAdCAMAAABhTZc9AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAA6lBMVEUAAABgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGAAAAAKeHNBAAAATHRSTlMAI3W18LY0suS/uMCTVhW3lBfQwjEJ0RjlfyngLH7XYTc/l30yOZkrySUdwXRNTHa+Di326CcKSkKbL0GnV6air8iYmtgwVDWz4yTxp/HcRgAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAE5SURBVCjPdVN3X8IwFHyMAi3SggXEAVVxMFRkuLeyue//eUzTkRes90dzyf3Sl9y9EEVIpTNZAFkjnaJt5PJCKZhWsSDGfE4XdwCrZEtqlxygzLTKLtyqZDX5rbqo70Wi3cB+wA4OjwLSRMMO1Ra8kB3jJGQeWgE5RTv6yxnOI9rGhT9cokMJKnXgVzHRTVS7MIl6cClRpT56dIXrf9QbDOgWQ7UwAnNpiCKNJ8yWO4zYbDIm9NW05sC654UJhpraIgG22YC29wHI6HtZ3Uc8PfPgRF115he8aqn6Z47v+4Z3TZT3jb36+NRF6ZXmM4f0WcuI40tmRN8qX4Y2fgIyjXtDwcM0sqiB5pbI+ooqdbgzps14TwqUAWce9vN8q58FFkuRwEq8hZUYl4s/51gPjI1QNsZgHa/9Av2VMZVx0T08AAAAAElFTkSuQmCC" width="29" height="29"/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="70" height="70" viewBox="0 0 70 70">
+  <defs>
+    <style>
+      .cls-1, .cls-3 {
+        stroke: #606060;
+        fill: none;
+      }
+
+      .cls-1 {
+        stroke-width: 4px;
+      }
+
+      .cls-2 {
+        fill: #606060;
+      }
+
+      .cls-3 {
+        stroke-linecap: round;
+        stroke-width: 3px;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <g>
+    <circle cx="35" cy="35" r="33" class="cls-1"/>
+    <circle cx="35" cy="35" r="4" class="cls-2"/>
+    <path d="M36.500,34.500 L36.500,12.500 " class="cls-3"/>
+    <path d="M35.854,37.646 L25.490,48.010 " class="cls-3"/>
+  </g>
 </svg>

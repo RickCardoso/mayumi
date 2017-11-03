@@ -1,9 +1,13 @@
+.site {
+	overflow-x: hidden;
+}
+
 .sticky {
 	display: block;
 }
 
 .hentry {
-	margin: 0 0 1.5em;
+	margin: 0;
 }
 
 .updated:not(.published) {
@@ -13,10 +17,15 @@
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+	margin: 0;
 }
 
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
+}
+
+.page-container {
+	max-width: $size__site-max;
+	margin: auto;
 }

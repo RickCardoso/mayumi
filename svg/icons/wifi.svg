@@ -1,3 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="36" height="29" viewBox="0 0 36 29">
-  <image xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAdCAMAAAD1qz7PAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABtlBMVEUAAABgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NgYGBjY2MAAAD7Iav4AAAAj3RSTlMACi9Vbn2FgXhhPhgnc7b33JBNAU6567ucioSJlavS5IgkS8mtaCIGEULZlBcfrOV2HEew7V5P8ft1Bz/ApiVn/c8ehoIJMS4j6S34RMtDEsqWM0HU9OPTawVpJtcpUJfiSYzWYgwL2K9/VPb5URQ1OChkmrFjK6SiV7dmoSyj53DHMj6Vah5YVjo5tQmY7sbNlIgAAAABYktHRACIBR1IAAAACXBIWXMAAAsSAAALEgHS3X78AAABeElEQVQ4y62S9z9CURjGD5JVSXYhhLKzlRGSTTJCNtkZKZFNw4rHn6zbHrf6xfPLPc9zvue973s+h5AQJSWnMFKZaekZmVmEXiw2JxsBcXN4uVFIXj61VVBYVMwXlJSWUUZYXhGGVIrcYVV1jdgfSGqZde6oviGANDYBzdKWyOKtbUB7h890dqFbJqdrs6cX6EuiVmygsD/GMEQxgMEhQpTAcEiqqhgZHVMF/QgX4xNkEopAMqWcLvAMKeLP+DP1LDRkbt7n5IwFCljUChep79Lyiq+2bjV4C2uAVtO5rhbLJayNzS1gYTuywx1gV78X9Pv6A0AQhqgPgVRx+DH5EdAkCQmOcVIZPT/PgNMQeyY7p7ulC5maLjZemsxm0xWLxJbl2v9SboyxGF03wJFardJbwHBHzzCAe4t3+fAI8Ggh6dNz0MheXulL7ZN/lc1utyViHL9uOeIzzl+PnHGhNy/0Hhf68EKf8f/3RTFfCRp3ff/8fLsiwj9FLXPwgUU4tgAAAABJRU5ErkJggg==" width="36" height="29"/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="80" height="60" viewBox="0 0 80 60">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #636363;
+      }
+
+      .cls-2 {
+        stroke: #606060;
+        stroke-linecap: round;
+        stroke-width: 4px;
+        fill: none;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <g>
+    <circle cx="40.344" cy="51.531" r="6.5" class="cls-1"/>
+    <path d="M24.423,38.414 C27.751,35.135 32.319,33.112 37.360,33.112 C42.202,33.112 46.608,34.978 49.897,38.031 " transform="translate(4.97 1.97)" class="cls-2"/>
+    <path d="M15.017,27.612 C20.787,21.991 28.669,18.528 37.360,18.528 C46.054,18.528 53.938,21.993 59.708,27.617 " transform="translate(4.97 1.97)" class="cls-2"/>
+    <path d="M3.992,17.398 C12.475,9.111 24.078,4.003 36.875,4.003 C49.821,4.003 61.546,9.231 70.055,17.690 " transform="translate(4.97 1.97)" class="cls-2"/>
+  </g>
 </svg>

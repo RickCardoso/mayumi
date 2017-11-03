@@ -1,0 +1,387 @@
+.hero-section {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  @include media-width-down(sm) {
+    font-size: 0.9em;
+  }
+  @include media-width-down(xs) {
+    font-size: 0.7em;
+  }
+  & .page-container {
+    position: relative;
+    height: 780px;
+    & .social-menu {
+      position: absolute;
+      bottom: 1.5em;
+      right: 15px;
+      width: 100%;
+      & .social-link {
+        font-size: 1.5rem;
+        color: #fff;
+        &:hover,
+        &:focus {
+          color: #fff;
+        }
+      }
+      $custom-transition: color 0.3s, opacity 2s, transform 2s;
+      @include crossTransition($custom-transition);
+      &[data-emergence=hidden] {
+        opacity: 0;
+        @include crossTransform(translate(3em, 0));
+      }
+      &[data-emergence=visible] {
+        opacity: 1;
+        @include crossTransform(translate(0, 0));
+      }
+    }
+  }
+  & .big-logo {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    @include crossTransform(translate(-50%, -50%));
+    width: 100%;
+  }
+  & .hero-content {
+    position: absolute;
+    top: 54.5%;
+    left: 12px;
+    width: 100%;
+    &[data-emergence=hidden] {
+      @include crossTransition(all 2s);
+      opacity: 0;
+      @include crossTransform(translate(0, 0));
+    }
+    &[data-emergence=visible] {
+      @include crossTransition(all 2s);
+      opacity: 1;
+      @include crossTransform(translate(0, -50%));
+    }
+    color: #fff;
+    @include media-width-down(lg) {
+      font-size: 0.9em;
+    }
+    @include media-width-down(md) {
+      font-size: 0.8em;
+    }
+  }
+  & h1 {
+    margin: 0;
+    font-size: 5em;
+    letter-spacing: 2.5px;
+  }
+  & p {
+    width: 100%;
+    margin: 0;
+    font-size: 1.125em;
+    letter-spacing: 0.65px;
+    @include media-width-down(xs) {
+      font-size: 2em;
+    }
+  }
+  & .white-line {
+    position: absolute;
+    bottom: -0.9em;
+    left: -10px;
+    width: 126px;
+    height: 1px;
+    background-color: #fff;
+    &[data-emergence=hidden] {
+      @include crossTransition(all 2s);
+      opacity: 0;
+      @include crossTransform(translate(-100%, 0));
+    }
+    &[data-emergence=visible] {
+      @include crossTransition(all 2s);
+      opacity: 1;
+      @include crossTransform(translate(0, 0));
+    }
+  }
+  & .arrow-down {
+    position: absolute;
+    bottom: 2.15em;
+    left: 50%;
+    width: 2.09375em;
+    height: 2.09375em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid #fff;
+    $custom-transition: background-color .3s, opacity 2s, transform 2s;
+    &:hover,
+    &:focus {
+      background-color: rgba(0, 0, 0, 0.75);
+    }
+    &[data-emergence=hidden] {
+      @include crossTransition(all 2s);
+      @include crossTransform(translate(-50%, -3em) rotate(-45deg));
+      opacity: 0;
+    }
+    &[data-emergence=visible] {
+      @include crossTransition($custom-transition);
+      @include crossTransform(translate(-50%, 0) rotate(-45deg));
+      opacity: 1;
+    }
+  }
+}
+
+.our-story-section {
+  @include make-container;
+  position: relative;
+  padding-top: 11em;
+  padding-bottom: 7em;
+
+  & .img-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  & h1 {
+    margin: 0;
+    padding-top: 0.85em;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: -0.75em;
+    font-size: 2.125em;
+    text-transform: uppercase;
+    color: #209baa;
+    font-weight: 300;
+    display: block;
+    width: 5.6471em;
+    height: 5.6471em;
+    border: 4px solid #33b8c8;
+    @include crossShadow(3.75px 3.75px 18px 0 rgba(119, 119, 119, 0.24));
+    background-color: rgba(255, 255, 255, 0.35);
+    z-index: 5;
+    @include crossTransition(all 1s);
+    &[data-emergence=hidden] {
+      opacity: 0;
+    }
+    &[data-emergence=visible] {
+      @include crossTransform(translate(0, -3em));
+      opacity: 1;
+    }
+  }
+  & .line-1 {
+    position: absolute;
+    bottom: -1.25em;
+    right: 5.5em;
+    width: 59px;
+    height: 1px;
+    background-color: #33b8c8;
+    @include crossTransition(all 2s);
+    &[data-emergence=hidden] {
+      opacity: 0;
+      @include crossTransform(translate(+100%, 0));
+    }
+    &[data-emergence=visible] {
+      opacity: 1;
+      @include crossTransform(translate(0, 0));
+    }
+  }
+  & .icon-group {
+    position: absolute;
+    top: -4em;
+    right: 0.5em;
+    opacity: 0.5;
+    & .icon {
+      margin-left: 2.5em;
+      @include crossTransition(all 2s);
+      &:nth-of-type(odd) {
+        &[data-emergence=hidden] {
+          opacity: 0;
+          @include crossTransform(translate(0, -200%));
+        }
+        &[data-emergence=visible] {
+          opacity: 1;
+          @include crossTransform(translate(0, 0));
+        }
+      }
+      &:nth-of-type(even) {
+        &[data-emergence=hidden] {
+          opacity: 0;
+          @include crossTransform(translate(0, +200%));
+        }
+        &[data-emergence=visible] {
+          opacity: 1;
+          @include crossTransform(translate(0, 0));
+        }
+      }
+    }
+    &.bottom {
+      top: auto;
+      right: auto;
+      bottom: -4em;
+      left: 1.25em;
+      & .icon {
+        margin-left: 0;
+        margin-right: 1.75em;
+      }
+    }
+  }
+  & .line-2 {
+    position: absolute;
+    top: -1.25em;
+    left: -0.75em;
+    width: 119px;
+    height: 1px;
+    background-color: #33b8c8;
+    @include crossTransition(all 2s);
+    &[data-emergence=hidden] {
+      opacity: 0;
+      @include crossTransform(translate(-100%, 0));
+    }
+    &[data-emergence=visible] {
+      opacity: 1;
+      @include crossTransform(translate(0, 0));
+    }
+  }
+  & .block-1 {
+    position: absolute;
+    bottom: -1.25em;
+    right: -1.25em;
+    width: 91px;
+    height: 91px;
+    border: 2px solid #33b8c8;
+    z-index: -1;
+    @include crossTransition(all 2s);
+    &[data-emergence=hidden] {
+      opacity: 0;
+      @include crossTransform(scale(2));
+    }
+    &[data-emergence=visible] {
+      opacity: 1;
+      @include crossTransform(scale(1));
+    }
+  }
+  // & .icon-clock {
+  //   position: absolute;
+  //   top: -2em;
+  //   right: 6em;
+  //   opacity: 0.5;
+  //   & svg {
+  //     fill: #606060;
+  //   }
+  // }
+  // & .icon-people {
+  //   position: absolute;
+  //   top: -2em;
+  //   right: 3em;
+  //   opacity: 0.5;
+  //   & svg {
+  //     fill: #606060;
+  //   }
+  // }
+  // & .icon-change {
+  //   position: absolute;
+  //   top: -2em;
+  //   right: 0em;
+  //   opacity: 0.5;
+  //   & svg {
+  //     fill: #606060;
+  //   }
+  // }
+  // & .icon-wifi {
+  //   position: absolute;
+  //   top: -2em;
+  //   left: 0;
+  //   opacity: 0.5;
+  //   & svg {
+  //     fill: #606060;
+  //   }
+  // }
+  // & .icon-crown {
+  //   position: absolute;
+  //   top: -2em;
+  //   left: 3em;
+  //   opacity: 0.5;
+  //   & svg {
+  //     fill: #606060;
+  //   }
+  // }
+
+  & h2 {
+    margin-bottom: 1em;
+    font-family: $font__museo-sans;
+    font-size: 1.125em;
+    font-weight: 700;
+    line-height: 1.55;
+  }
+  & p {
+    font-size: 0.875em;
+    font-weight: 300;
+    line-height: 1.45;
+  }
+  & .big-image {
+    @include crossShadow(14px 14px 38px 0 rgba(119, 119, 119, 0.16));
+  }
+  & .big-col {
+    @include make-col-ready;
+    @include make-col(718, 1230);
+    & .text-block {
+      padding: 4.375em 2.5em;
+      max-width: 515px;
+      margin-right: auto;
+    }
+    & .btn-blue {
+      margin-top: 2.75em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 10em;
+    }
+    @include media-width-down(sm) {
+      @include make-col(1, 1);
+      & .text-block {
+        margin-right: 0;
+        margin-left: auto;
+      }
+    }
+    @include media-width-down(xs) {
+      & .text-block {
+        padding: 2.5em 0;
+        max-width: 100%;
+        margin: 0;
+      }
+      & img {
+        text-align: center;
+      }
+    }
+  }
+  & .small-col {
+    @include make-col-ready;
+    @include make-col(512, 1230);
+    & .text-block {
+      margin-bottom: 27%;
+      padding-top: 2.25em;
+    }
+    @include media-width-down(sm) {
+      @include make-col(1, 1);
+      margin-top: 4em;
+      & .text-block {
+        margin-bottom: 3em;
+        padding-right: 4em;
+      }
+      & img {
+        float: right;
+      }
+    }
+    @include media-width-down(xs) {
+      & .text-block {
+        padding: 2.5em 0;
+        max-width: 100%;
+        margin: 0;
+      }
+      & img {
+        float: none;
+        text-align: center;
+      }
+    }
+  }
+}

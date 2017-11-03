@@ -142,6 +142,9 @@ function mayumi_scripts() {
 	wp_enqueue_script( 'font-awesome-solid', get_template_directory_uri() . '/ext-res/font-awesome/packs/solid.js', array(), '5.0', true );
 	wp_enqueue_script( 'font-awesome', get_template_directory_uri() . '/ext-res/font-awesome/fontawesome.js', array(), '5.0', true );
 
+	/* Emergence */
+	wp_enqueue_script( 'emergence', get_template_directory_uri() . '/ext-res/emergence/dist/emergence.js', array(), '1.0.10', true );
+
 	/* Custom jQuery */
 	wp_enqueue_script( 'iccube-jquery', get_template_directory_uri() . '/js/app.js', array('jquery'), '1.0.0', true );
 
