@@ -1,3 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="28" height="29" viewBox="0 0 28 29">
-  <image xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAdCAMAAACOj/wDAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAABGlBMVEUAAABgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGAAAABLpKWwAAAAXHRSTlMAP/J9LnUk7HMBM3HK+vW4Y1aq6+T0hcLx2j0ZwP7wgDmhPOBCCjTta2bzD5WbK22DrzBvIz52dAI4ny2trDGrMqkfz+cNeZFusPcg1ltsvCecCWrDujbV/cmzV/wL/x8AAAABYktHRACIBR1IAAAACXBIWXMAAAsSAAALEgHS3X78AAABEElEQVQoz52T11oCMRCFRxRXVBYFVFi7WMGKYlewV+zd//2fw7DNZd1w4bnJmTlfMpnMiUgU2mLtokUHxPVqp0FXY00oBPNO3G3QI9KbVDBTfY7Sn84kbWQHYFCGcgqK5S2R4REYbcS5sXwMxt2zJiZhSgqkpmecxOwc87+lFiiWFpe8aLnISvAiq6z5vAzrzdfPsuHRSmYz1FucLZ9vhxvfYVf/Knvs68UyB3rxkOo/xRpHrXam9eIxJ/o+5ZSSy6w/L3R2zoVfgcsm7er65pa6G6ip3PlKwrqnIA/wWHmyE2qezyIv9uRNeFUF397hI+CET9sy5te3c0S9agQ8ZLstbD/PfdHwfBuFlo53/8oPLZ8r7f1aFvsAAAAASUVORK5CYII=" width="28" height="29"/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="66" height="72" viewBox="0 0 66 72">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: #606060;
+        stroke-linecap: round;
+        stroke-width: 4px;
+        fill: none;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <g>
+    <path d="M4.000,12.969 C4.000,12.969 7.667,12.969 13.000,12.969 C21.333,12.969 28.000,21.302 28.000,28.969 C28.000,34.302 28.000,35.302 28.000,39.969 C28.000,48.635 34.000,54.969 43.000,54.969 C48.667,54.969 58.000,54.969 58.000,54.969 " transform="translate(2.08 4)" class="cls-1"/>
+    <path d="M4.000,54.969 C4.000,54.969 9.667,54.969 15.000,54.969 C19.232,54.969 22.518,52.906 24.728,50.089 M30.747,17.158 C32.856,14.565 36.224,12.969 41.000,12.969 C46.667,12.969 58.000,12.969 58.000,12.969 " transform="translate(2.08 4)" class="cls-1"/>
+    <path d="M52.000,45.969 L61.000,54.969 L52.000,63.969 " transform="translate(2.08 4)" class="cls-1"/>
+    <path d="M52.000,3.969 L61.000,12.969 L52.000,21.969 " transform="translate(2.08 4)" class="cls-1"/>
+  </g>
 </svg>
