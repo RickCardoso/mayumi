@@ -128,12 +128,14 @@
 	<header class="entry-header">
 		<section class="hero-section" style="background-image: url(<?php echo CFS()->get('hero_background'); ?>)">
 			<div class="page-container">
-				<div class="big-logo" data-emergence="hidden">
-					<img src="<?php echo get_template_directory_uri(); ?>/svg/logo-white.png" alt="">					
+				<div class="big-logo" style="opacity: 0;">
+					<img src="<?php echo get_template_directory_uri(); ?>/svg/logo-white.png" alt="">
 				</div>
-				<h1 data-emergence="hidden"><?php echo CFS()->get('hero_title'); ?></h1>
-				<p data-emergence="hidden"><?php echo CFS()->get('hero_subtitle'); ?></p>
-				<div class="white-line" data-emergence="hidden"></div>
+				<div class="hero-content" data-emergence="hidden">
+					<h1><?php echo CFS()->get('hero_title'); ?></h1>
+					<p><?php echo CFS()->get('hero_subtitle'); ?></p>
+					<div class="white-line" data-emergence="hidden"></div>
+				</div>
 				<a class="arrow-down" data-emergence="hidden" href="#our-story-section"><i class="fal fa-chevron-down" data-fa-transform="rotate-45"></i></a>
 
 				<div class="social-menu" data-emergence="hidden">
@@ -168,7 +170,7 @@
 
 				<div class="row">
 					<div class="big-col">
-						<div class="img-wrap">
+						<div class="img-wrap justify-content-start">
 							<h1 data-emergence="hidden">Our <b>Story</b></h1>
 							<?php echo wp_get_attachment_image(CFS()->get('our_story_big_image'), 'full', false, array('class'=>'img-fluid big-image')) ?>
 							<div class="line-1" data-emergence="hidden"></div>
@@ -187,7 +189,7 @@
 						<div class="text-block">
 							<?php echo CFS()->get('our_story_row_1') ?>
 						</div>
-						<div class="img-wrap">
+						<div class="img-wrap justify-content-end">
 							<div class="line-2" data-emergence="hidden"></div>
 							<?php echo wp_get_attachment_image(CFS()->get('our_story_small_image'), 'full', false, array('class'=>'img-fluid')) ?>
 							<div class="block-1" data-emergence="hidden"></div>

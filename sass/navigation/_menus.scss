@@ -5,7 +5,10 @@
 	width: 100%;
 	background-color: #fff;
   z-index: 15;
-	// @include crossShadow(0 6px 12px 0 rgba(0, 0, 0, 0.25));
+	@include crossTransition(all .6s);
+	&.with-shadow {
+		@include crossShadow(0 6px 12px 0 rgba(0, 0, 0, 0.25));
+	}
 }
 
 .main-navigation {

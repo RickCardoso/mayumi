@@ -121,9 +121,6 @@ add_action( 'widgets_init', 'mayumi_widgets_init' );
 function mayumi_scripts() {
 	wp_enqueue_style( 'mayumi-style', get_stylesheet_uri() );
 
-	/* CSS3 Animate It */
-	wp_enqueue_style( 'css3-animate-it', get_template_directory_uri() . '/ext-res/css3-animate-it/css/animations.css');//, array(), '0.1.0', true );
-
 	wp_enqueue_script( 'mayumi-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'mayumi-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
@@ -144,9 +141,6 @@ function mayumi_scripts() {
 	wp_enqueue_script( 'font-awesome-regular', get_template_directory_uri() . '/ext-res/font-awesome/packs/regular.js', array(), '5.0', true );
 	wp_enqueue_script( 'font-awesome-solid', get_template_directory_uri() . '/ext-res/font-awesome/packs/solid.js', array(), '5.0', true );
 	wp_enqueue_script( 'font-awesome', get_template_directory_uri() . '/ext-res/font-awesome/fontawesome.js', array(), '5.0', true );
-
-	/* CSS3 Animate It */
-	wp_enqueue_script( 'css3-animate-it', get_template_directory_uri() . '/ext-res/css3-animate-it/js/css3-animate-it.js', array(), '0.1.0', true );
 
 	/* Emergence */
 	wp_enqueue_script( 'emergence', get_template_directory_uri() . '/ext-res/emergence/dist/emergence.js', array(), '1.0.10', true );

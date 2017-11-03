@@ -2,6 +2,12 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  @include media-width-down(sm) {
+    font-size: 0.9em;
+  }
+  @include media-width-down(xs) {
+    font-size: 0.7em;
+  }
   & .page-container {
     position: relative;
     height: 780px;
@@ -9,15 +15,17 @@
       position: absolute;
       bottom: 1.5em;
       right: 15px;
-      width: 10em;
+      width: 100%;
       & .social-link {
+        font-size: 1.5rem;
         color: #fff;
         &:hover,
         &:focus {
           color: #fff;
         }
       }
-      @include crossTransition(all 2s);
+      $custom-transition: color 0.3s, opacity 2s, transform 2s;
+      @include crossTransition($custom-transition);
       &[data-emergence=hidden] {
         opacity: 0;
         @include crossTransform(translate(3em, 0));
@@ -32,67 +40,60 @@
     position: absolute;
     top: 60%;
     left: 50%;
-    @include crossTransition(all 2s);
-    &[data-emergence=hidden] {
-      opacity: 1;
-      @include crossTransform(translate(-50%, -50%));
-    }
-    &[data-emergence=visible] {
-      opacity: 0;
-      @include crossTransform(translate(-50%, -100%));
-    }
+    @include crossTransform(translate(-50%, -50%));
+    width: 100%;
   }
-  & h1 {
+  & .hero-content {
     position: absolute;
-    top: 53%;
-    left: 15px;
-    width: $size__site-max;
-    margin: 0;
-    font-size: 5em;
-    letter-spacing: 2.5px;
-    color: #fff;
-    @include crossTransition(all 2s);
+    top: 54.5%;
+    left: 12px;
+    width: 100%;
     &[data-emergence=hidden] {
+      @include crossTransition(all 2s);
       opacity: 0;
       @include crossTransform(translate(0, 0));
     }
     &[data-emergence=visible] {
+      @include crossTransition(all 2s);
       opacity: 1;
       @include crossTransform(translate(0, -50%));
     }
+    color: #fff;
+    @include media-width-down(lg) {
+      font-size: 0.9em;
+    }
+    @include media-width-down(md) {
+      font-size: 0.8em;
+    }
+  }
+  & h1 {
+    margin: 0;
+    font-size: 5em;
+    letter-spacing: 2.5px;
   }
   & p {
-    position: absolute;
-    top: 60.25%;
-    left: 12px;
-    width: $size__site-max;
+    width: 100%;
     margin: 0;
     font-size: 1.125em;
     letter-spacing: 0.65px;
-    color: #fff;
-    @include crossTransition(all 2s);
-    &[data-emergence=hidden] {
-      opacity: 0;
-      @include crossTransform(translate(0, +50%));
-    }
-    &[data-emergence=visible] {
-      opacity: 1;
-      @include crossTransform(translate(0, -50%));
+    @include media-width-down(xs) {
+      font-size: 2em;
     }
   }
   & .white-line {
     position: absolute;
-    top: 63.8%;
+    bottom: -0.9em;
     left: -10px;
     width: 126px;
     height: 1px;
     background-color: #fff;
-    @include crossTransition(all 2s);
     &[data-emergence=hidden] {
+      @include crossTransition(all 2s);
       opacity: 0;
       @include crossTransform(translate(-100%, 0));
     }
     &[data-emergence=visible] {
+      @include crossTransition(all 2s);
       opacity: 1;
       @include crossTransform(translate(0, 0));
     }
@@ -101,8 +102,8 @@
     position: absolute;
     bottom: 2.15em;
     left: 50%;
-    width: 65px;
-    height: 65px;
+    width: 2.09375em;
+    height: 2.09375em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -111,17 +112,17 @@
     background-color: rgba(0, 0, 0, 0.5);
     border: 2px solid #fff;
     $custom-transition: background-color .3s, opacity 2s, transform 2s;
-    @include crossTransition($custom-transition);
     &:hover,
     &:focus {
       background-color: rgba(0, 0, 0, 0.75);
     }
-    // @include crossTransition(transform 1s opacity 1s);
     &[data-emergence=hidden] {
+      @include crossTransition(all 2s);
       @include crossTransform(translate(-50%, -3em) rotate(-45deg));
       opacity: 0;
     }
     &[data-emergence=visible] {
+      @include crossTransition($custom-transition);
       @include crossTransform(translate(-50%, 0) rotate(-45deg));
       opacity: 1;
     }
@@ -136,6 +137,8 @@
 
   & .img-wrap {
     position: relative;
+    display: flex;
+    align-items: center;
   }
 
   & h1 {
@@ -257,51 +260,51 @@
       @include crossTransform(scale(1));
     }
   }
-  & .icon-clock {
-    position: absolute;
-    top: -2em;
-    right: 6em;
-    opacity: 0.5;
-    & svg {
-      fill: #606060;
-    }
-  }
-  & .icon-people {
-    position: absolute;
-    top: -2em;
-    right: 3em;
-    opacity: 0.5;
-    & svg {
-      fill: #606060;
-    }
-  }
-  & .icon-change {
-    position: absolute;
-    top: -2em;
-    right: 0em;
-    opacity: 0.5;
-    & svg {
-      fill: #606060;
-    }
-  }
-  & .icon-wifi {
-    position: absolute;
-    top: -2em;
-    left: 0;
-    opacity: 0.5;
-    & svg {
-      fill: #606060;
-    }
-  }
-  & .icon-crown {
-    position: absolute;
-    top: -2em;
-    left: 3em;
-    opacity: 0.5;
-    & svg {
-      fill: #606060;
-    }
-  }
+  // & .icon-clock {
+  //   position: absolute;
+  //   top: -2em;
+  //   right: 6em;
+  //   opacity: 0.5;
+  //   & svg {
+  //     fill: #606060;
+  //   }
+  // }
+  // & .icon-people {
+  //   position: absolute;
+  //   top: -2em;
+  //   right: 3em;
+  //   opacity: 0.5;
+  //   & svg {
+  //     fill: #606060;
+  //   }
+  // }
+  // & .icon-change {
+  //   position: absolute;
+  //   top: -2em;
+  //   right: 0em;
+  //   opacity: 0.5;
+  //   & svg {
+  //     fill: #606060;
+  //   }
+  // }
+  // & .icon-wifi {
+  //   position: absolute;
+  //   top: -2em;
+  //   left: 0;
+  //   opacity: 0.5;
+  //   & svg {
+  //     fill: #606060;
+  //   }
+  // }
+  // & .icon-crown {
+  //   position: absolute;
+  //   top: -2em;
+  //   left: 3em;
+  //   opacity: 0.5;
+  //   & svg {
+  //     fill: #606060;
+  //   }
+  // }
 
   & h2 {
     margin-bottom: 1em;
@@ -360,6 +363,7 @@
     }
     @include media-width-down(sm) {
       @include make-col(1, 1);
+      margin-top: 4em;
       & .text-block {
         margin-bottom: 3em;
         padding-right: 4em;
