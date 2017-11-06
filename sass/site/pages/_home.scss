@@ -16,6 +16,7 @@
       bottom: 1.5em;
       right: 15px;
       width: 100%;
+      z-index: 1;
       & .social-link {
         font-size: 1.5rem;
         color: #fff;
@@ -111,6 +112,7 @@
     color: #fff;
     background-color: rgba(0, 0, 0, 0.5);
     border: 2px solid #fff;
+    z-index: 2;
     $custom-transition: background-color .3s, opacity 2s, transform 2s;
     &:hover,
     &:focus {

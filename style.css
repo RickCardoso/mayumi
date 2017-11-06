@@ -7166,6 +7166,7 @@ a {
       bottom: 1.5em;
       right: 15px;
       width: 100%;
+      z-index: 1;
       -webkit-transition: color 0.3s, opacity 2s, transform 2s;
       -moz-transition: color 0.3s, opacity 2s, transform 2s;
       -o-transition: color 0.3s, opacity 2s, transform 2s;
@@ -7286,7 +7287,8 @@ a {
     font-size: 2em;
     color: #fff;
     background-color: rgba(0, 0, 0, 0.5);
-    border: 2px solid #fff; }
+    border: 2px solid #fff;
+    z-index: 2; }
     .hero-section .arrow-down:hover, .hero-section .arrow-down:focus {
       background-color: rgba(0, 0, 0, 0.75); }
     .hero-section .arrow-down[data-emergence=hidden] {
