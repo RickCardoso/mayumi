@@ -54,14 +54,14 @@ $(document).ready(function() {
 
   // set box shadow on fixed header
   $(window).scroll(function() {
-    if ($(document).scrollTop() > ($('#our-story-section').offset().top - 80)) {
+    if ($(document).scrollTop() > ($('#our-story').offset().top - 80)) {
       $('.site-header').addClass('with-shadow');
     } else {
       $('.site-header').removeClass('with-shadow');
     }
   });
   $(window).resize(function() {
-    if ($(document).scrollTop() > ($('#our-story-section').offset().top - 80)) {
+    if ($(document).scrollTop() > ($('#our-story').offset().top - 80)) {
       $('.site-header').addClass('with-shadow');
     } else {
       $('.site-header').removeClass('with-shadow');
