@@ -7721,6 +7721,9 @@ a {
     #thumbnail-carousel .carousel-prev:hover, #thumbnail-carousel .carousel-next:hover {
       opacity: 0.5; }
 
+#the-experience {
+  padding-top: 6em; }
+
 .heading-image {
   background-repeat: no-repeat;
   background-size: cover;

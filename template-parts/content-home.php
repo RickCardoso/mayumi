@@ -237,38 +237,122 @@
 				<h1>The <b>Experience</b></h1>
 
 				<div class="introduction">
-					<h3>Mayumi gives you the best of both worlds - a private haven and social hub. This is where people who want to live life distinctively come together.</h3>
-					<p>We have simplified the entire process of settling in and moving out. The only thing you need to bring is yourself. A simple online booking, application, and payment process lets you join Mayumi and plan the stay you want.</p>
-					<p>Your stay is month to month, and can be cancelled easily with 30 days notice. Digital keys allowyou and other pre-screened members access within the community. You may also invite guests to enjoy some time at Mayumi. Shared and private spaces are fully furnished and maintained by a housekeeping service. <b>We take care of the all the necessities: utilities, bedding, dishes, appliances. There are also fun community activities planned that you can join.</b></p>
+					<?php echo CFS()->get('the_experience_introduction'); ?>
 				</div>
 
 				<div class="experience-container">
-					<div class="row">
-						<div class="small-col">
-							<?php echo wp_get_attachment_image(CFS()->get('the_experience_image_1'), 'full', false, array('class'=>'img-fluid')) ?>
-							<div class="block-1" data-emergence="hidden"></div>
+
+				<?php
+
+				$experiences = CFS()->get('experiences');
+				$i = 0;
+
+				foreach ($experiences as $experience) :
+
+					reset($experience['style']);
+
+					if (current($experience['style']) == 'Small Left Aligned Image') : ?>
+
+						<div class="row">
+							<div class="small-col">
+								<?php echo wp_get_attachment_image($experience['image'], 'full', false, array('class'=>'img-fluid')) ?>
+								<div class="block-1" data-emergence="hidden"></div>
+							</div>
+							<div class="big-col">
+								<h2><?php echo $experience['title']; ?></h2>
+								<?php if( $i % 2 == 0 ) : echo str_replace('<ul>', '<ul class="yellow">', $experience['content']); else : echo str_replace('<ul>', '<ul class="blue">', $experience['content']); endif; ?>
+								<!-- <p>Each member is assigned their own unit, with an adjoining private restroom. The unit is fully furnished, and features the following:</p>
+								<ul>
+									<li>Sleekly designed fixtures</li>
+									<li>A soft water system</li>
+									<li>Luxury linens</li>
+									<li>Caspar mattress</li>
+									<li>Writing table and chair</li>
+									<li>Curated artwork</li>
+									<li>Free high-speed fiber with private network</li>
+									<li>Free DirecTV</li>
+									<li>Smartphone thermostat control</li>
+									<li>Smartphone shading control</li>
+									<li>Adjustable mood lighting</li>
+									<li>Wireless bluetooth keys</li>
+									<li>Weekly housekeeping service</li>
+								</ul> -->
+							</div>
 						</div>
-						<div class="big-col">
-							<h2>Private Rooms</h2>
-							<p>Each member is assigned their own unit, with an adjoining private restroom. The unit is fully furnished, and features the following:</p>
-							<ul>
-								<li>Sleekly designed fixtures</li>
-								<li>A soft water system</li>
-								<li>Luxury linens</li>
-								<li>Caspar mattress</li>
-								<li>Writing table and chair</li>
-								<li>Curated artwork</li>
-								<li>Free high-speed fiber with private network</li>
-								<li>Free DirecTV</li>
-								<li>Smartphone thermostat control</li>
-								<li>Smartphone shading control</li>
-								<li>Adjustable mood lighting</li>
-								<li>Wireless bluetooth keys</li>
-								<li>Weekly housekeeping service</li>
-							</ul>
+
+					<?php elseif (current($experience['style']) == 'Small Right Aligned Image') : ?>
+
+							<div class="row">
+								<div class="big-col">
+									<h2><?php echo $experience['title']; ?></h2>
+									<?php if( $i % 2 == 0 ) : echo str_replace('<ul>', '<ul class="yellow">', $experience['content']); else : echo str_replace('<ul>', '<ul class="blue">', $experience['content']); endif; ?>
+									<!-- <p>Each member is assigned their own unit, with an adjoining private restroom. The unit is fully furnished, and features the following:</p>
+									<ul>
+										<li>Sleekly designed fixtures</li>
+										<li>A soft water system</li>
+										<li>Luxury linens</li>
+										<li>Caspar mattress</li>
+										<li>Writing table and chair</li>
+										<li>Curated artwork</li>
+										<li>Free high-speed fiber with private network</li>
+										<li>Free DirecTV</li>
+										<li>Smartphone thermostat control</li>
+										<li>Smartphone shading control</li>
+										<li>Adjustable mood lighting</li>
+										<li>Wireless bluetooth keys</li>
+										<li>Weekly housekeeping service</li>
+									</ul> -->
+								</div>
+								<div class="small-col">
+									<?php echo wp_get_attachment_image($experience['image'], 'full', false, array('class'=>'img-fluid')) ?>
+									<div class="block-1" data-emergence="hidden"></div>
+								</div>
+							</div>
+
+					<?php elseif (current($experience['style']) == 'Big Left Aligned Image') : ?>
+
+						<div class="row">
+							<div class="huge-col">
+								<?php echo wp_get_attachment_image( $experience['image'], 'full', false, array('class'=>'img-fluid')) ?>
+								<div class="block-1" data-emergence="hidden"></div>
+							</div>
+							<div class="huge-col">
+								<h2><?php echo $experience['title']; ?></h2>
+								<?php if( $i % 2 == 0 ) : echo str_replace('<ul>', '<ul class="yellow">', $experience['content']); else : echo str_replace('<ul>', '<ul class="blue">', $experience['content']); endif; ?>
+								<!-- <p>The courtyard is where our members can enjoy some time outdoors. You will love seeing new and familiar faces in this central space.</p>
+								<p>The courtyard features:</p>
+								<ul>
+									<li>Relaxing water feature</li>
+									<li>Lounge seating areas with lighting</li>
+									<li>Fireplace</li>
+									<li>BBQ and table</li>
+									<li>Landscaped</li>
+									<li>Organized events</li>
+								</ul> -->
+							</div>
 						</div>
-					</div>
-					<div class="row">
+
+					<?php elseif (current($experience['style']) == 'Big Right Aligned Image') : ?>
+
+						<div class="row flex-end">
+							<div class="huge-col">
+								<?php echo wp_get_attachment_image( $experience['image'], 'full', false, array('class'=>'img-fluid')) ?>
+								<div class="block-1" data-emergence="hidden"></div>
+							</div>
+							<div class="huge-col">
+								<h2><?php echo $experience['title']; ?></h2>
+								<?php if( $i % 2 == 0 ) : echo str_replace('<ul>', '<ul class="yellow">', $experience['content']); else : echo str_replace('<ul>', '<ul class="blue">', $experience['content']); endif; ?>
+							</div>
+						</div>
+
+					<?php endif;
+
+				$i++;
+
+				endforeach; ?>
+
+
+					<!-- <div class="row">
 						<div class="big-col">
 							<h2>Common Kitchen</h2>
 							<p>Our members have full access to a spacious kitchen, including high-end appliances and dining area. Share a meal, take a break, or just enjoy the atmosphere. The kitchen includes the following:</p>
@@ -286,26 +370,7 @@
 							<?php echo wp_get_attachment_image(CFS()->get('the_experience_image_1'), 'full', false, array('class'=>'img-fluid')) ?>
 							<div class="block-1" data-emergence="hidden"></div>
 						</div>
-					</div>
-					<div class="row">
-						<div class="huge-col">
-							<?php echo wp_get_attachment_image(CFS()->get('the_experience_image_1'), 'full', false, array('class'=>'img-fluid')) ?>
-							<div class="block-1" data-emergence="hidden"></div>
-						</div>
-						<div class="huge-col">
-							<h3>Common Courtyard</h3>
-							<p>The courtyard is where our members can enjoy some time outdoors. You will love seeing new and familiar faces in this central space.</p>
-							<p>The courtyard features:</p>
-							<ul>
-								<li>Relaxing water feature</li>
-								<li>Lounge seating areas with lighting</li>
-								<li>Fireplace</li>
-								<li>BBQ and table</li>
-								<li>Landscaped</li>
-								<li>Organized events</li>
-							</ul>
-						</div>
-					</div>
+					</div> -->
 				</div>
 
 			</div>
