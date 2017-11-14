@@ -83,7 +83,8 @@
 		<section class="hero-section" id="hero" style="background-image: url(<?php echo CFS()->get('hero_background'); ?>)">
 			<div class="page-container">
 				<div class="big-logo" style="opacity: 0;">
-					<img src="<?php echo get_template_directory_uri(); ?>/svg/logo-white.png" alt="">
+					<?php echo wp_get_attachment_image( CFS()->get('hero_logo'), 'full_size' ); ?>
+					<!-- <img src="<?php echo get_template_directory_uri(); ?>/svg/logo-white.png" alt=""> -->
 				</div>
 				<div class="hero-content" data-emergence="hidden">
 					<h1><?php echo CFS()->get('hero_title'); ?></h1>

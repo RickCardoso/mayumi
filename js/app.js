@@ -43,7 +43,7 @@ $(document).ready(function() {
 
   // smooth scrolling
   $("a").click(function(event) {
-    if (this.hash !== "") {
+    if (this.hash !== "" && !($(this).hasClass('carousel-prev') || $(this).hasClass('carousel-next'))) {
      event.preventDefault();
      var linkOffset = 0;
      $("html, body").animate({
