@@ -126,7 +126,7 @@
 				<div class="row">
 					<div class="big-col">
 						<div class="img-wrap justify-content-start">
-							<h1 data-emergence="hidden">Our <b>Story</b></h1>
+							<h1 class="section-title" data-emergence="hidden">Our <b>Story</b></h1>
 							<?php echo wp_get_attachment_image(CFS()->get('our_story_big_image'), 'full', false, array('class'=>'img-fluid big-image')) ?>
 							<div class="line-1" data-emergence="hidden"></div>
 						</div>
@@ -171,7 +171,7 @@
 					</div>
 				</div>
 				<div class="page-container">
-					<h1 data-emergence="hidden">Images</h1>
+					<h1 class="section-title" data-emergence="hidden">Images</h1>
 					<div class="white-line" data-emergence="hidden"></div>
 					<div id="thumbnail-carousel" data-emergence="hidden" class="carousel slide" data-ride="carousel" data-interval="false">
 						<a class="carousel-prev" href="#thumbnail-carousel" role="button" data-slide="prev">
@@ -234,10 +234,18 @@
 			</div>
 
 			<div class="page-container">
-				<h1>The <b>Experience</b></h1>
 
-				<div class="introduction">
-					<?php echo CFS()->get('the_experience_introduction'); ?>
+				<div class="intro-container">
+					<div class="row">
+						<div class="title-col">
+							<h1 class="section-title" data-emergence="hidden">The <b>Experience</b></h1>
+						</div>
+						<div class="intro-col">
+							<div class="introduction">
+								<?php echo CFS()->get('the_experience_introduction'); ?>
+							</div>
+						</div>
+					</div>
 				</div>
 
 				<div class="experience-container">
@@ -260,48 +268,26 @@
 							</div>
 							<div class="big-col">
 								<h2><?php echo $experience['title']; ?></h2>
-								<?php if( $i % 2 == 0 ) : echo str_replace('<ul>', '<ul class="yellow">', $experience['content']); else : echo str_replace('<ul>', '<ul class="blue">', $experience['content']); endif; ?>
-								<!-- <p>Each member is assigned their own unit, with an adjoining private restroom. The unit is fully furnished, and features the following:</p>
-								<ul>
-									<li>Sleekly designed fixtures</li>
-									<li>A soft water system</li>
-									<li>Luxury linens</li>
-									<li>Caspar mattress</li>
-									<li>Writing table and chair</li>
-									<li>Curated artwork</li>
-									<li>Free high-speed fiber with private network</li>
-									<li>Free DirecTV</li>
-									<li>Smartphone thermostat control</li>
-									<li>Smartphone shading control</li>
-									<li>Adjustable mood lighting</li>
-									<li>Wireless bluetooth keys</li>
-									<li>Weekly housekeeping service</li>
-								</ul> -->
+								<?php
+								$classes = ($i % 2 == 0) ? 'yellow' : 'blue' ;
+								if (substr_count($experience['content'], '<li>') > 7) :
+									$classes = $classes . ' two-col';
+								endif; ?>
+								<?php echo str_replace('<ul>', '<ul class="' . $classes . '">', $experience['content']); ?>
 							</div>
 						</div>
 
 					<?php elseif (current($experience['style']) == 'Small Right Aligned Image') : ?>
 
-							<div class="row">
-								<div class="big-col">
+							<div class="row justify-content-end">
+								<div class="medium-col">
 									<h2><?php echo $experience['title']; ?></h2>
-									<?php if( $i % 2 == 0 ) : echo str_replace('<ul>', '<ul class="yellow">', $experience['content']); else : echo str_replace('<ul>', '<ul class="blue">', $experience['content']); endif; ?>
-									<!-- <p>Each member is assigned their own unit, with an adjoining private restroom. The unit is fully furnished, and features the following:</p>
-									<ul>
-										<li>Sleekly designed fixtures</li>
-										<li>A soft water system</li>
-										<li>Luxury linens</li>
-										<li>Caspar mattress</li>
-										<li>Writing table and chair</li>
-										<li>Curated artwork</li>
-										<li>Free high-speed fiber with private network</li>
-										<li>Free DirecTV</li>
-										<li>Smartphone thermostat control</li>
-										<li>Smartphone shading control</li>
-										<li>Adjustable mood lighting</li>
-										<li>Wireless bluetooth keys</li>
-										<li>Weekly housekeeping service</li>
-									</ul> -->
+									<?php
+									$classes = ($i % 2 == 0) ? 'yellow' : 'blue' ;
+									if (substr_count($experience['content'], '<li>') > 7) :
+										$classes = $classes . ' two-col';
+									endif; ?>
+									<?php echo str_replace('<ul>', '<ul class="' . $classes . '">', $experience['content']); ?>
 								</div>
 								<div class="small-col">
 									<?php echo wp_get_attachment_image($experience['image'], 'full', false, array('class'=>'img-fluid')) ?>
@@ -316,9 +302,9 @@
 								<?php echo wp_get_attachment_image( $experience['image'], 'full', false, array('class'=>'img-fluid')) ?>
 								<div class="block-1" data-emergence="hidden"></div>
 							</div>
-							<div class="huge-col">
+							<div class="huge-col padded">
 								<h2><?php echo $experience['title']; ?></h2>
-								<?php if( $i % 2 == 0 ) : echo str_replace('<ul>', '<ul class="yellow">', $experience['content']); else : echo str_replace('<ul>', '<ul class="blue">', $experience['content']); endif; ?>
+								<?php if( $i % 2 == 0 ) : echo str_replace('<ul>', '<ul class="yellow two-col">', $experience['content']); else : echo str_replace('<ul>', '<ul class="blue two-col">', $experience['content']); endif; ?>
 								<!-- <p>The courtyard is where our members can enjoy some time outdoors. You will love seeing new and familiar faces in this central space.</p>
 								<p>The courtyard features:</p>
 								<ul>
