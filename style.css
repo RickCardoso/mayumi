@@ -7721,6 +7721,12 @@ a {
     #thumbnail-carousel .carousel-prev:hover, #thumbnail-carousel .carousel-next:hover {
       opacity: 0.5; }
 
+.heading-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 18.22916667%; }
+
 /*--------------------------------------------------------------
 ## Section
 --------------------------------------------------------------*/
