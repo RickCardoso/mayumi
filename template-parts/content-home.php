@@ -78,6 +78,19 @@
 <!-- Book Now modal --> <!-- TODO -->
 <!---->
 
+<!-- Social Media Embedding -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+<!---->
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<section class="hero-section" id="hero" style="background-image: url(<?php echo CFS()->get('hero_background'); ?>)">
@@ -171,7 +184,7 @@
 					</div>
 				</div>
 				<div class="page-container">
-					<h1 class="section-title" data-emergence="hidden">Images</h1>
+					<h1 data-emergence="hidden">Images</h1>
 					<div class="white-line" data-emergence="hidden"></div>
 					<div id="thumbnail-carousel" data-emergence="hidden" class="carousel slide" data-ride="carousel" data-interval="false">
 						<a class="carousel-prev" href="#thumbnail-carousel" role="button" data-slide="prev">
@@ -305,16 +318,6 @@
 							<div class="huge-col padded">
 								<h2><?php echo $experience['title']; ?></h2>
 								<?php if( $i % 2 == 0 ) : echo str_replace('<ul>', '<ul class="yellow two-col">', $experience['content']); else : echo str_replace('<ul>', '<ul class="blue two-col">', $experience['content']); endif; ?>
-								<!-- <p>The courtyard is where our members can enjoy some time outdoors. You will love seeing new and familiar faces in this central space.</p>
-								<p>The courtyard features:</p>
-								<ul>
-									<li>Relaxing water feature</li>
-									<li>Lounge seating areas with lighting</li>
-									<li>Fireplace</li>
-									<li>BBQ and table</li>
-									<li>Landscaped</li>
-									<li>Organized events</li>
-								</ul> -->
 							</div>
 						</div>
 
@@ -337,26 +340,6 @@
 
 				endforeach; ?>
 
-
-					<!-- <div class="row">
-						<div class="big-col">
-							<h2>Common Kitchen</h2>
-							<p>Our members have full access to a spacious kitchen, including high-end appliances and dining area. Share a meal, take a break, or just enjoy the atmosphere. The kitchen includes the following:</p>
-							<ul>
-								<li>Refrigerator</li>
-								<li>Stove and Oven</li>
-								<li>Two Microwaves</li>
-								<li>Dishwashers</li>
-								<li>All dishes and utensils provided</li>
-								<li>Filtered water system</li>
-								<li>Dining table</li>
-							</ul>
-						</div>
-						<div class="small-col">
-							<?php echo wp_get_attachment_image(CFS()->get('the_experience_image_1'), 'full', false, array('class'=>'img-fluid')) ?>
-							<div class="block-1" data-emergence="hidden"></div>
-						</div>
-					</div> -->
 				</div>
 
 			</div>
@@ -367,18 +350,79 @@
 			<div class="heading-image" style="background-image: url(<?php echo CFS()->get('contact_us_image') ?>)">
 			</div>
 
-			<h1>Contact Us</h1>
+			<div class="page-container">
 
-			<form class="form-container" action="index.html" method="post">
-				<input type="text" name="first-name" value="" placeholder="First Name*">
-				<input type="text" name="last-name" value="" placeholder="Last Name*">
-				<input type="email" name="email" value="" placeholder="Email*">
-				<input type="text" name="subject" value="" placeholder="Subject*">
-				<input type="text" name="phone-number" value="" placeholder="Phone Number*">
-				<textarea name="message" rows="1" placeholder="Message*"></textarea>
-				<p>*All fields are required.</p>
-				<button class="btn-std btn-blue" type="button" name="send">Send</button>
-			</form>
+				<h1 class="section-title" data-emergence="hidden"><b>Contact</b> Us</h1>
+
+				<form class="form-container" action="index.html" method="post">
+					<div class="row">
+						<div class="form-col-3">
+							<input type="text" name="first-name" value="" placeholder="First Name*">
+						</div>
+						<div class="form-col-3">
+							<input type="text" name="last-name" value="" placeholder="Last Name*">
+						</div>
+						<div class="form-col-3">
+							<input type="email" name="email" value="" placeholder="Email*">
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-col-2">
+							<input type="text" name="subject" value="" placeholder="Subject*">
+						</div>
+						<div class="form-col-2">
+							<input type="text" name="phone-number" value="" placeholder="Phone Number*">
+						</div>
+					</div>
+					<textarea name="message" rows="1" placeholder="Message*"></textarea>
+					<p>*All fields are required.</p>
+					<button class="btn-std btn-blue mt-5" type="button" name="send">Send</button>
+				</form>
+
+				<div class="news-container">
+					<div class="row">
+						<div class="community-col">
+							<h2>Community</h2>
+							<h3>Mayumi Events Calendar</h3>
+							<?php
+
+							$community_events = CFS()->get('community_events');
+
+							foreach ($community_events as $event_date) :
+
+								$date = date('M. d, Y', strtotime($event_date['date']));
+								$events = $event_date['date_events']; ?>
+
+								<div class="date-box">
+
+									<h4><?php echo $date; ?></h4>
+
+									<?php foreach ($events as $event) :
+
+										$title = $event['event'];
+										$description = $event['description']; ?>
+
+										<div class="event-box">
+											<h5><?php echo $title; ?></h5>
+											<p><?php echo $description; ?></p>
+										</div>
+
+									<?php endforeach; ?>
+
+								</div>
+
+							<?php endforeach; ?>
+
+						</div>
+						<div class="social-col">
+							<h2>Social Media</h2>
+							<h3>Follow Us:</h3>
+							<div class="fb-page" data-href="https://www.facebook.com/themayumi" data-tabs="timeline" data-width="458px" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/themayumi" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/themayumi">Mayumi</a></blockquote></div>
+						</div>
+					</div>
+				</div>
+
+			</div>
 
 		</section><!-- #contact-us -->
 
