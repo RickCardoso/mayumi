@@ -75,7 +75,49 @@
 </svg>
 <!---->
 
-<!-- Book Now modal --> <!-- TODO -->
+<!-- Book Now drawer -->
+<div id="drawer-bg-overlay" style="opacity: 0;"></div>
+<div id="book-drawer">
+	<div id="btn-close-drawer"><i class="fal fa-times"></i></div>
+	<div class="heading-image" style="background-image: url(<?php echo CFS()->get('book_now_image') ?>)"></div>
+	<h1 class="section-title"><strong>Membership</strong> & <strong>Booking</strong></h1>
+	<p><?php echo CFS()->get('book_now_text'); ?></p>
+	<iframe id="frontdesk-frame" src="https://bookings.frontdeskanywhere.net/bookings/#/account/1ZN170724A";;; style="border: none;" frameborder="0" width="100%" height="657px" scrolling="no"></iframe>
+	<h2>Agreements</h2>
+	<?php
+
+	$agreements = CFS()->get('agreements');
+
+	$i = 1;
+
+	foreach ($agreements as $agreement) : ?>
+
+		<div class="agreement-box">
+
+		  <a class="agreement-accordion" data-toggle="collapse" href="#agreement-<?php echo $i; ?>-content" aria-expanded="false" aria-controls="agreement-<?php echo $i; ?>-content">
+		    <?php echo $agreement['title']; ?>
+				<i class="fa fa-chevron-down"></i>
+		  </a>
+			<div class="collapse" id="agreement-<?php echo $i; ?>-content">
+			  <div class="agreement-content">
+			    <?php echo $agreement['content']; ?>
+			  </div>
+			</div>
+			<label class="checkbox" for="agreement-<?php echo $i; ?>">
+				<input type="checkbox" id="agreement-<?php echo $i; ?>" value="agreement-<?php echo $i; ?>-val">
+				<span class="checkmark"></span>
+				<?php echo $agreement['legal_statement']; ?>
+			</label>
+			<!-- <form class="check-agree" action="javascript:void(0);" method="post">
+				<input type="checkbox" name="agreement-<?php echo $i; ?>" value="">
+			</form> -->
+
+		</div>
+
+	<?php
+	$i++;
+	endforeach; ?>
+</div>
 <!---->
 
 <!-- Social Media Embedding -->

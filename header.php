@@ -47,7 +47,7 @@
 
 			<div class="btn-wrap d-flex d-lg-none">
 
-				<a class="btn-std btn-blue btn-book" href="#book">Book Now</a>
+				<a class="btn-std btn-blue btn-book" href="#book-drawer">Book Now</a>
 
 				<button class="navbar-toggler btn-std btn-toggler" type="button" data-toggle="collapse" data-target="#primary-nav" aria-controls="primary-nav" aria-expanded="false" aria-label="Toggle navigation">
 					<i class="fa fa-bars"></i>
@@ -66,7 +66,7 @@
 			?>
 
 			<div class="btn-wrap d-none d-lg-flex">
-				<a class="btn-std btn-blue" href="#">Book Now</a>
+				<a class="btn-std btn-blue" href="#book-drawer">Book Now</a>
 			</div>
 
 		</nav><!-- #site-navigation -->

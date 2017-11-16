@@ -707,3 +707,114 @@
     }
   }
 }
+
+#drawer-bg-overlay {
+  position: fixed;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.75);
+  @include crossTransition(all .3s);
+  &.open {
+    display: block;
+  }
+}
+
+#book-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  max-width: 1600px;
+  height: 100vh;
+  overflow: auto;
+  background-color: #fff;
+  @include crossTransform(translateX(100%));
+  z-index: 1000;
+  @include crossTransition(all .3s);
+  &.open {
+    @include crossTransform(translateX(0));
+  }
+  & h1.section-title {
+    margin: auto;
+    max-width: 581px;
+    width: 100%;
+    height: 174px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    opacity: 0;
+    &.visible {
+      @include crossTransform(translate(0, -0.625em));
+      opacity: 1;
+    }
+  }
+  & p {
+    max-width: 970px;
+    margin: 1.75em auto 2em;
+    font-size: 1.125em;
+    font-weight: 600;
+    color: #203234;
+    text-align: center;
+  }
+  & .frontdesk-frame {
+    margin: 1.5em 0;
+  }
+  & h2 {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    font-family: $font__museo-sans;
+    font-size: 2.125em;
+    font-weight: 600;
+    color: #203234;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  & .agreement-box {
+    margin: 0 auto;
+    padding-bottom: 4em;
+    max-width: 385px;
+  }
+
+  & .agreement-accordion {
+    font-size: 1.125em;
+    font-weight: 600;
+    color: #1895a3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  & .agreement-content p {
+    text-align: justify;
+    font-size: 0.75em;
+    font-weight: 300;
+  }
+
+  & .check-agree {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    & label {
+      font-size: 0.875em;
+      color: #203234;
+    }
+  }
+}
+
+#btn-close-drawer {
+  position: absolute;
+  top: 0.25em;
+  left: 0.75em;
+  font-size: 2.5em;
+  color: #fff;
+  @include crossTransition(all .3s);
+  padding: 8px;
+  cursor: pointer;
+  &:hover {
+    color: #33b8c8;
+  }
+}
