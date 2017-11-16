@@ -72,71 +72,81 @@
 				c-1.5-4.6,5.7-7.2,11.1-9.5c2.1-1,1.5-0.4,2.8-1C736.5-0.1,738.2-0.2,739.3,0.2z"/>
 		</g>
 	</symbol>
-	<!-- <symbol id="clock" viewBox="0 0 70 70">
-		<style>
-			.cls-1, .cls-3 {
-				stroke: #606060;
-				fill: none;
-			}
-			.cls-1 {
-				stroke-width: 4px;
-			}
-			.cls-2 {
-				fill: #606060;
-			}
-			.cls-3 {
-				stroke-linecap: round;
-				stroke-width: 3px;
-				fill-rule: evenodd;
-			}
-		</style>
-		<g>
-	    <circle cx="35" cy="35" r="33" class="cls-1"/>
-	    <circle cx="35" cy="35" r="4" class="cls-2"/>
-	    <path d="M36.500,34.500 L36.500,12.500 " class="cls-3"/>
-	    <path d="M35.854,37.646 L25.490,48.010 " class="cls-3"/>
-	  </g>
-	</symbol>
-	<symbol id="people" viewBox="0 0 66 72">
-	</symbol>
-	<symbol id="change" viewBox="0 0 66 72">
-		<g>
-	    <path d="M4.000,12.969 C4.000,12.969 7.667,12.969 13.000,12.969 C21.333,12.969 28.000,21.302 28.000,28.969 C28.000,34.302 28.000,35.302 28.000,39.969 C28.000,48.635 34.000,54.969 43.000,54.969 C48.667,54.969 58.000,54.969 58.000,54.969 " transform="translate(2.08 4)" class="cls-1"/>
-	    <path d="M4.000,54.969 C4.000,54.969 9.667,54.969 15.000,54.969 C19.232,54.969 22.518,52.906 24.728,50.089 M30.747,17.158 C32.856,14.565 36.224,12.969 41.000,12.969 C46.667,12.969 58.000,12.969 58.000,12.969 " transform="translate(2.08 4)" class="cls-1"/>
-	    <path d="M52.000,45.969 L61.000,54.969 L52.000,63.969 " transform="translate(2.08 4)" class="cls-1"/>
-	    <path d="M52.000,3.969 L61.000,12.969 L52.000,21.969 " transform="translate(2.08 4)" class="cls-1"/>
-	  </g>
-	</symbol>
-	<symbol id="wifi" viewBox="0 0 80 60">
-		<g>
-	    <circle cx="40.344" cy="51.531" r="6.5" class="cls-1"/>
-	    <path d="M24.423,38.414 C27.751,35.135 32.319,33.112 37.360,33.112 C42.202,33.112 46.608,34.978 49.897,38.031 " transform="translate(4.97 1.97)" class="cls-2"/>
-	    <path d="M15.017,27.612 C20.787,21.991 28.669,18.528 37.360,18.528 C46.054,18.528 53.938,21.993 59.708,27.617 " transform="translate(4.97 1.97)" class="cls-2"/>
-	    <path d="M3.992,17.398 C12.475,9.111 24.078,4.003 36.875,4.003 C49.821,4.003 61.546,9.231 70.055,17.690 " transform="translate(4.97 1.97)" class="cls-2"/>
-	  </g>
-	</symbol>
-	<symbol id="crown" viewBox="0 0 85 70">
-		<g>
-	    <path d="M12.875,57.469 L4.875,30.469 L28.875,35.469 L39.875,7.469 L50.875,35.469 L74.875,29.469 L67.875,57.469 L12.875,57.469 Z" transform="translate(4.63 2.5)" class="cls-1"/>
-	    <path d="M10.875,64.469 L68.875,64.469 " transform="translate(4.63 2.5)" class="cls-1"/>
-	  </g>
-	</symbol> -->
 </svg>
+<!---->
+
+<!-- Book Now drawer -->
+<div id="drawer-bg-overlay" style="opacity: 0;"></div>
+<div id="book-drawer">
+	<div id="btn-close-drawer"><i class="fal fa-times"></i></div>
+	<div class="heading-image" style="background-image: url(<?php echo CFS()->get('book_now_image') ?>)"></div>
+	<h1 class="section-title"><strong>Membership</strong> & <strong>Booking</strong></h1>
+	<p><?php echo CFS()->get('book_now_text'); ?></p>
+	<iframe id="frontdesk-frame" src="https://bookings.frontdeskanywhere.net/bookings/#/account/1ZN170724A";;; style="border: none;" frameborder="0" width="100%" height="657px" scrolling="no"></iframe>
+	<h2>Agreements</h2>
+	<?php
+
+	$agreements = CFS()->get('agreements');
+
+	$i = 1;
+
+	foreach ($agreements as $agreement) : ?>
+
+		<div class="agreement-box">
+
+		  <a class="agreement-accordion" data-toggle="collapse" href="#agreement-<?php echo $i; ?>-content" aria-expanded="false" aria-controls="agreement-<?php echo $i; ?>-content">
+		    <?php echo $agreement['title']; ?>
+				<i class="fa fa-chevron-down"></i>
+		  </a>
+			<div class="collapse" id="agreement-<?php echo $i; ?>-content">
+			  <div class="agreement-content">
+			    <?php echo $agreement['content']; ?>
+			  </div>
+			</div>
+			<label class="checkbox" for="agreement-<?php echo $i; ?>">
+				<input type="checkbox" id="agreement-<?php echo $i; ?>" value="agreement-<?php echo $i; ?>-val">
+				<span class="checkmark"></span>
+				<?php echo $agreement['legal_statement']; ?>
+			</label>
+			<!-- <form class="check-agree" action="javascript:void(0);" method="post">
+				<input type="checkbox" name="agreement-<?php echo $i; ?>" value="">
+			</form> -->
+
+		</div>
+
+	<?php
+	$i++;
+	endforeach; ?>
+</div>
+<!---->
+
+<!-- Social Media Embedding -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.11';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
 <!---->
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<section class="hero-section" style="background-image: url(<?php echo CFS()->get('hero_background'); ?>)">
+		<section class="hero-section" id="hero" style="background-image: url(<?php echo CFS()->get('hero_background'); ?>)">
 			<div class="page-container">
 				<div class="big-logo" style="opacity: 0;">
-					<img src="<?php echo get_template_directory_uri(); ?>/svg/logo-white.png" alt="">
+					<?php echo wp_get_attachment_image( CFS()->get('hero_logo'), 'full_size' ); ?>
+					<!-- <img src="<?php echo get_template_directory_uri(); ?>/svg/logo-white.png" alt=""> -->
 				</div>
 				<div class="hero-content" data-emergence="hidden">
 					<h1><?php echo CFS()->get('hero_title'); ?></h1>
 					<p><?php echo CFS()->get('hero_subtitle'); ?></p>
 					<div class="white-line" data-emergence="hidden"></div>
 				</div>
-				<a class="arrow-down" data-emergence="hidden" href="#our-story-section"><i class="fal fa-chevron-down" data-fa-transform="rotate-45"></i></a>
+				<a class="arrow-down" data-emergence="hidden" href="#our-story"><i class="fal fa-chevron-down" data-fa-transform="rotate-45"></i></a>
 
 				<div class="social-menu" data-emergence="hidden">
 
@@ -164,14 +174,14 @@
 
 	<div class="entry-content">
 
-		<div class="page-container">
+		<section class="our-story-section" id="our-story">
 
-			<section class="our-story-section" id="our-story-section">
+			<div class="page-container">
 
 				<div class="row">
 					<div class="big-col">
 						<div class="img-wrap justify-content-start">
-							<h1 data-emergence="hidden">Our <b>Story</b></h1>
+							<h1 class="section-title" data-emergence="hidden">Our <b>Story</b></h1>
 							<?php echo wp_get_attachment_image(CFS()->get('our_story_big_image'), 'full', false, array('class'=>'img-fluid big-image')) ?>
 							<div class="line-1" data-emergence="hidden"></div>
 						</div>
@@ -201,9 +211,262 @@
 					</div>
 				</div>
 
-			</section>
+			</div>
 
-		</div>
+		</section><!-- #our-story-section -->
+
+		<section id="images">
+			<div id="image-carousel" class="carousel slide" data-ride="carousel">
+				<div class="carousel-inner">
+					<div class="carousel-item image-item active" style="background-image: url(<?php echo wp_get_attachment_image_url(CFS()->get('our_story_small_image')) ?>)">
+					</div>
+					<div class="carousel-item image-item" style="background-image: url(<?php echo wp_get_attachment_image_url(CFS()->get('our_story_big_image')) ?>)">
+					</div>
+					<div class="carousel-item image-item" style="background-image: url(<?php echo CFS()->get('hero_background'); ?>)">
+					</div>
+				</div>
+				<div class="page-container">
+					<h1 data-emergence="hidden">Images</h1>
+					<div class="white-line" data-emergence="hidden"></div>
+					<div id="thumbnail-carousel" data-emergence="hidden" class="carousel slide" data-ride="carousel" data-interval="false">
+						<a class="carousel-prev" href="#thumbnail-carousel" role="button" data-slide="prev">
+							<i class="fa fa-arrow-left"></i>
+							<span class="sr-only">Previous</span>
+						</a>
+						<a class="carousel-next" href="#thumbnail-carousel" role="button" data-slide="next">
+							<i class="fa fa-arrow-right"></i>
+							<span class="sr-only">Previous</span>
+						</a>
+					  <div class="carousel-inner">
+					    <div class="carousel-item active">
+								<ol class="thumbnail-indicators">
+									<li data-target="#image-carousel" data-slide-to="0">
+										<?php echo wp_get_attachment_image(CFS()->get('our_story_small_image'), 'full', false, array('class'=>'d-block w-100')) ?>
+									</li>
+									<li data-target="#image-carousel" data-slide-to="1">
+										<?php echo wp_get_attachment_image(CFS()->get('our_story_big_image'), 'full', false, array('class'=>'d-block w-100')) ?>
+									</li>
+									<li data-target="#image-carousel" data-slide-to="2">
+										<img class="d-block w-100" src="<?php echo CFS()->get('hero_background'); ?>" alt="Third slide">
+									</li>
+								</ol>
+							</div>
+							<div class="carousel-item">
+								<ol class="thumbnail-indicators">
+									<li data-target="#image-carousel" data-slide-to="0">
+										<?php echo wp_get_attachment_image(CFS()->get('our_story_small_image'), 'full', false, array('class'=>'d-block w-100')) ?>
+									</li>
+									<li data-target="#image-carousel" data-slide-to="1">
+										<?php echo wp_get_attachment_image(CFS()->get('our_story_big_image'), 'full', false, array('class'=>'d-block w-100')) ?>
+									</li>
+									<li data-target="#image-carousel" data-slide-to="2">
+										<img class="d-block w-100" src="<?php echo CFS()->get('hero_background'); ?>" alt="Third slide">
+									</li>
+								</ol>
+							</div>
+						</div>
+					</div>
+					<div class="carousel-controls">
+						<div class="control-container">
+							<a class="arrow-down carousel-prev" href="#image-carousel" role="button" data-slide="prev">
+								<i class="fal fa-chevron-left" data-fa-transform="rotate-45"></i>
+								<span class="sr-only">Previous</span>
+							</a>
+						</div>
+						<div class="control-container">
+							<a class="arrow-down carousel-next" href="#image-carousel" role="button" data-slide="next">
+								<i class="fal fa-chevron-right" data-fa-transform="rotate-45"></i>
+								<span class="sr-only">Next</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section><!-- #images -->
+
+		<section id="the-experience">
+			<div class="heading-image" style="background-image: url(<?php echo CFS()->get('the_experience_image') ?>)">
+			</div>
+
+			<div class="page-container">
+
+				<div class="intro-container">
+					<div class="row">
+						<div class="title-col">
+							<h1 class="section-title" data-emergence="hidden">The <b>Experience</b></h1>
+						</div>
+						<div class="intro-col">
+							<div class="introduction">
+								<?php echo CFS()->get('the_experience_introduction'); ?>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="experience-container">
+
+				<?php
+
+				$experiences = CFS()->get('experiences');
+				$i = 0;
+
+				foreach ($experiences as $experience) :
+
+					reset($experience['style']);
+
+					if (current($experience['style']) == 'Small Left Aligned Image') : ?>
+
+						<div class="row">
+							<div class="small-col">
+								<?php echo wp_get_attachment_image($experience['image'], 'full', false, array('class'=>'img-fluid')) ?>
+								<div class="block-1" data-emergence="hidden"></div>
+							</div>
+							<div class="big-col">
+								<h2><?php echo $experience['title']; ?></h2>
+								<?php
+								$classes = ($i % 2 == 0) ? 'yellow' : 'blue' ;
+								if (substr_count($experience['content'], '<li>') > 7) :
+									$classes = $classes . ' two-col';
+								endif; ?>
+								<?php echo str_replace('<ul>', '<ul class="' . $classes . '">', $experience['content']); ?>
+							</div>
+						</div>
+
+					<?php elseif (current($experience['style']) == 'Small Right Aligned Image') : ?>
+
+							<div class="row justify-content-end">
+								<div class="medium-col">
+									<h2><?php echo $experience['title']; ?></h2>
+									<?php
+									$classes = ($i % 2 == 0) ? 'yellow' : 'blue' ;
+									if (substr_count($experience['content'], '<li>') > 7) :
+										$classes = $classes . ' two-col';
+									endif; ?>
+									<?php echo str_replace('<ul>', '<ul class="' . $classes . '">', $experience['content']); ?>
+								</div>
+								<div class="small-col">
+									<?php echo wp_get_attachment_image($experience['image'], 'full', false, array('class'=>'img-fluid')) ?>
+									<div class="block-1" data-emergence="hidden"></div>
+								</div>
+							</div>
+
+					<?php elseif (current($experience['style']) == 'Big Left Aligned Image') : ?>
+
+						<div class="row">
+							<div class="huge-col">
+								<?php echo wp_get_attachment_image( $experience['image'], 'full', false, array('class'=>'img-fluid')) ?>
+								<div class="block-1" data-emergence="hidden"></div>
+							</div>
+							<div class="huge-col padded">
+								<h2><?php echo $experience['title']; ?></h2>
+								<?php if( $i % 2 == 0 ) : echo str_replace('<ul>', '<ul class="yellow two-col">', $experience['content']); else : echo str_replace('<ul>', '<ul class="blue two-col">', $experience['content']); endif; ?>
+							</div>
+						</div>
+
+					<?php elseif (current($experience['style']) == 'Big Right Aligned Image') : ?>
+
+						<div class="row flex-end">
+							<div class="huge-col">
+								<?php echo wp_get_attachment_image( $experience['image'], 'full', false, array('class'=>'img-fluid')) ?>
+								<div class="block-1" data-emergence="hidden"></div>
+							</div>
+							<div class="huge-col">
+								<h2><?php echo $experience['title']; ?></h2>
+								<?php if( $i % 2 == 0 ) : echo str_replace('<ul>', '<ul class="yellow">', $experience['content']); else : echo str_replace('<ul>', '<ul class="blue">', $experience['content']); endif; ?>
+							</div>
+						</div>
+
+					<?php endif;
+
+				$i++;
+
+				endforeach; ?>
+
+				</div>
+
+			</div>
+
+		</section><!-- #the-experience -->
+
+		<section id="contact-us">
+			<div class="heading-image" style="background-image: url(<?php echo CFS()->get('contact_us_image') ?>)">
+			</div>
+
+			<div class="page-container">
+
+				<h1 class="section-title" data-emergence="hidden"><b>Contact</b> Us</h1>
+
+				<form class="form-container" action="index.html" method="post">
+					<div class="row">
+						<div class="form-col-3">
+							<input type="text" name="first-name" value="" placeholder="First Name*">
+						</div>
+						<div class="form-col-3">
+							<input type="text" name="last-name" value="" placeholder="Last Name*">
+						</div>
+						<div class="form-col-3">
+							<input type="email" name="email" value="" placeholder="Email*">
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-col-2">
+							<input type="text" name="subject" value="" placeholder="Subject*">
+						</div>
+						<div class="form-col-2">
+							<input type="text" name="phone-number" value="" placeholder="Phone Number*">
+						</div>
+					</div>
+					<textarea name="message" rows="1" placeholder="Message*"></textarea>
+					<p>*All fields are required.</p>
+					<button class="btn-std btn-blue mt-5" type="button" name="send">Send</button>
+				</form>
+
+				<div class="news-container">
+					<div class="row">
+						<div class="community-col">
+							<h2>Community</h2>
+							<h3>Mayumi Events Calendar</h3>
+							<?php
+
+							$community_events = CFS()->get('community_events');
+
+							foreach ($community_events as $event_date) :
+
+								$date = date('M. d, Y', strtotime($event_date['date']));
+								$events = $event_date['date_events']; ?>
+
+								<div class="date-box">
+
+									<h4><?php echo $date; ?></h4>
+
+									<?php foreach ($events as $event) :
+
+										$title = $event['event'];
+										$description = $event['description']; ?>
+
+										<div class="event-box">
+											<h5><?php echo $title; ?></h5>
+											<p><?php echo $description; ?></p>
+										</div>
+
+									<?php endforeach; ?>
+
+								</div>
+
+							<?php endforeach; ?>
+
+						</div>
+						<div class="social-col">
+							<h2>Social Media</h2>
+							<h3>Follow Us:</h3>
+							<div class="fb-page" data-href="https://www.facebook.com/themayumi" data-tabs="timeline" data-width="458px" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/themayumi" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/themayumi">Mayumi</a></blockquote></div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</section><!-- #contact-us -->
 
 	</div><!-- .entry-content -->
 

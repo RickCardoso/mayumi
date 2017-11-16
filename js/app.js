@@ -43,7 +43,7 @@ $(document).ready(function() {
 
   // smooth scrolling
   $("a").click(function(event) {
-    if (this.hash !== "") {
+    if (this.hash !== "" && !($(this).hasClass('carousel-prev') || $(this).hasClass('carousel-next') || $(this).hasClass('agreement-accordion'))) {
      event.preventDefault();
      var linkOffset = 0;
      $("html, body").animate({
@@ -54,18 +54,60 @@ $(document).ready(function() {
 
   // set box shadow on fixed header
   $(window).scroll(function() {
-    if ($(document).scrollTop() > ($('#our-story-section').offset().top - 80)) {
+    if ($(document).scrollTop() > ($('#our-story').offset().top - 80)) {
       $('.site-header').addClass('with-shadow');
     } else {
       $('.site-header').removeClass('with-shadow');
     }
   });
   $(window).resize(function() {
-    if ($(document).scrollTop() > ($('#our-story-section').offset().top - 80)) {
+    if ($(document).scrollTop() > ($('#our-story').offset().top - 80)) {
       $('.site-header').addClass('with-shadow');
     } else {
       $('.site-header').removeClass('with-shadow');
     }
+  });
+
+
+  // book now drawer
+  $('*[href="#book-drawer"]').click(function() {
+    $('#book-drawer').addClass('open');
+    $('#drawer-bg-overlay').addClass('open');
+    $('#book-drawer').find('.section-title').addClass('visible');
+    $('#drawer-bg-overlay').animate({
+      opacity: 1
+    }, 300, function() {
+      $('body').css('overflow', 'hidden');
+    });
+  });
+  $('#drawer-bg-overlay').click(function() {
+    $('#book-drawer').removeClass('open');
+    $('#book-drawer').find('.section-title').removeClass('visible');
+    $('#drawer-bg-overlay').animate({
+      opacity: 0
+    }, 300, function() {
+      $('#drawer-bg-overlay').removeClass('open');
+      $('body').css('overflow', 'auto');
+    });
+  });
+  $('#btn-close-drawer').click(function() {
+    $('#book-drawer').removeClass('open');
+    $('#book-drawer').find('.section-title').removeClass('visible');
+    $('#drawer-bg-overlay').animate({
+      opacity: 0
+    }, 300, function() {
+      $('#drawer-bg-overlay').removeClass('open');
+      $('body').css('overflow', 'auto');
+    });
+  });
+
+
+  // accordion toggle
+  $('div[id^=agreement-]').on('hide.bs.collapse', function () {
+    $(this).parent().find('.agreement-accordion').find('svg').removeClass('fa-rotate-180');
+  });
+  $('div[id^=agreement-]').on('show.bs.collapse', function () {
+    $(this).parent().find('.agreement-accordion').find('svg').addClass('fa-rotate-180');
   });
 
 });

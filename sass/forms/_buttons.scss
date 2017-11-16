@@ -26,6 +26,9 @@ input[type="submit"] {
 	@include crossTransition(all .3s);
 	text-transform: uppercase;
 	padding: 0.8215em 2.17125em;
+	&:visited { // for links
+		color: inherit;
+	}
 }
 
 .btn-blue {
