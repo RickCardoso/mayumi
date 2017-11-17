@@ -260,7 +260,7 @@
 
 								<?php endif; ?>
 
-											<li class="<?php echo ($i == 0) ? 'active' : ''; ?>" data-target="#image-carousel" data-slide-to="0" style="background-image: url(<?php echo $image['image']; ?>)">
+											<li class="<?php echo ($i == 0) ? 'active' : ''; ?>" data-target="#image-carousel" data-slide-to="<?php echo $i; ?>" style="background-image: url(<?php echo $image['image']; ?>)">
 											</li>
 
 								<?php if ($i % 3 == 2 || $i == count($images) - 1) : ?>
