@@ -361,7 +361,7 @@
   }
   & .thumbnail-indicators {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     padding-left: 0;
     list-style: none;
     margin: 0;
@@ -409,6 +409,8 @@
   left: 0;
   margin-left: -7px;
   text-align: right;
+  width: 100%;
+  max-width: 366px;
   &[data-emergence=hidden] {
     @include crossTransition(all .2s);
     opacity: 0;
