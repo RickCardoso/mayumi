@@ -2,3 +2,15 @@ $size__site-main: 100%;
 $size__site-sidebar: 25%;
 
 $size__site-max: 1230px;
+
+/* bootstrap overrides */
+$grid-breakpoints: (
+  xxs:  0,
+  xs:   414px,  // iPhone
+  sm:   576px,
+  md:   768px,
+  lg:   992px,
+  xl:   1200px,
+  xxl:  1600px, // larger desktops
+  xxxl: 1920px // largest desktops
+);

@@ -36,6 +36,9 @@
         @include crossTransform(translate(0, 0));
       }
     }
+    @include media-width-down(sm) {
+      height: 100vh;
+    }
   }
   & .big-logo {
     position: absolute;
@@ -304,6 +307,15 @@
 
 #image-carousel {
   position: relative;
+  @include media-width-down(md) {
+    font-size: 0.9em;
+  }
+  @include media-width-down(sm) {
+    font-size: 0.8em;
+  }
+  @include media-width-down(xs) {
+    font-size: 0.7em;
+  }
   & .page-container {
     position: absolute;
     top: 0;
@@ -312,13 +324,13 @@
     height: 100%;
     width: 100%;
     z-index: 5;
-    margin-left: 15px;
-    margin-right: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
   & h1 {
     position: absolute;
     top: 18px;
-    left: 0;
+    left: 15px;
     font-size: 2.5em;
     font-weight: 700;
     color: #fff;
@@ -337,7 +349,7 @@
   }
   & .white-line {
     position: absolute;
-    top: 76px;
+    top: 4.75em;
     left: -26px;
     width: 126px;
     height: 1px;
@@ -358,14 +370,26 @@
     background-position: center;
     background-repeat: no-repeat;
     padding-bottom: 36.4583333%;
+    @include media-width-down(xl) {
+      padding-bottom: 45%;
+    }
+    @include media-width-down(lg) {
+      padding-bottom: 50%;
+    }
+    @include media-width-down(md) {
+      padding-bottom: 60%;
+    }
   }
   & .thumbnail-indicators {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     padding-left: 0;
     list-style: none;
     margin: 0;
     & li {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
       margin: 0 7px;
       width: 108px;
       height: 65px;
@@ -409,6 +433,8 @@
   left: 0;
   margin-left: -7px;
   text-align: right;
+  width: 100%;
+  max-width: 366px;
   &[data-emergence=hidden] {
     @include crossTransition(all .2s);
     opacity: 0;
@@ -458,6 +484,17 @@
     &[data-emergence=visible] {
       @include crossTransform(translate(0, -3.2em));
       opacity: 1;
+    }
+    @include media-width-down(md) {
+      position: static;
+      top: auto;
+      left: auto;
+      width: 493px;
+      margin: auto;
+      &[data-emergence=visible] {
+        @include crossTransform(translate(0, -1em));
+        opacity: 1;
+      }
     }
   }
   & h2 {
@@ -525,26 +562,47 @@
   background-size: cover;
   background-position: center;
   padding-bottom: 18.22916667%;
+  @include media-width-down(xl) {
+    padding-bottom: 23%;
+  }
+  @include media-width-down(lg) {
+    padding-bottom: 28%;
+  }
+  @include media-width-down(md) {
+    padding-bottom: 32%;
+  }
+  @include media-width-down(sm) {
+    padding-bottom: 40%;
+  }
 }
 
 .intro-container {
   @include make-container;
   padding-top: 4.5em;
+  @include media-width-down(md) {
+    padding-top: 0;
+  }
   & .row {
     margin-left: -37px;
     margin-right: -37px;
   }
   & .title-col {
     @include make-col-ready;
-    @include make-col(493, 1274);
+    flex: 0 0 493px;
     padding-right: 37px;
     padding-left: 37px;
+    @include media-width-down(md) {
+      @include make-col(1, 1);
+    }
   }
   & .intro-col {
     @include make-col-ready;
-    @include make-col(743, 1274);
+    flex: 1;
     padding-right: 37px;
     padding-left: 37px;
+    @include media-width-down(md) {
+      @include make-col(1, 1);
+    }
   }
 }
 
@@ -558,6 +616,9 @@
     @include make-col(545, 1262);
     padding-right: 31px;
     padding-left: 31px;
+    @include media-width-down(sm) {
+      @include make-col(2, 3);
+    }
   }
   & .medium-col {
     @include make-col-ready;
@@ -565,6 +626,9 @@
     padding-top: 2.25em;
     padding-right: 31px;
     padding-left: 31px;
+    @include media-width-down(sm) {
+      @include make-col(1, 1);
+    }
   }
   & .big-col {
     @include make-col-ready;
@@ -572,6 +636,9 @@
     padding-top: 2.25em;
     padding-right: 31px;
     padding-left: 31px;
+    @include media-width-down(sm) {
+      @include make-col(1, 1);
+    }
   }
   & .huge-col {
     @include make-col-ready;
@@ -581,6 +648,13 @@
     &.padded {
       padding-top: 4.5em;
       padding-left: 6.5em;
+    }
+    @include media-width-down(sm) {
+      @include make-col(1, 1);
+      &.padded {
+        padding-right: 31px;
+        padding-left: 31px;
+      }
     }
   }
 }
@@ -617,11 +691,17 @@
       @include make-col-ready;
       @include make-col(1, 3);
       padding: 0 33px;
+      @include media-width-down(sm) {
+        @include make-col(1, 1);
+      }
     }
     & .form-col-2 {
       @include make-col-ready;
       @include make-col(1, 2);
       padding: 0 33px;
+      @include media-width-down(sm) {
+        @include make-col(1, 1);
+      }
     }
     & input,
     & textarea {
@@ -642,6 +722,19 @@
       width: 100%;
       height: 60px;
       font-size: 1.1875em;
+    }
+    @include media-width-down(md) {
+      font-size: 0.9em;
+      & .row {
+        margin: 0 -15px;
+      }
+      & .form-col-3,
+      & .form-col-2 {
+        padding: 0 15px;
+      }
+    }
+    @include media-width-down(sm) {
+      font-size: 0.8em;
     }
   }
   & .news-container {
@@ -665,6 +758,7 @@
       padding: 0 37px;
       @include media-width-down(md) {
         @include make-col(1, 1);
+        padding-top: 4em;
       }
     }
     & h2,
@@ -704,6 +798,12 @@
     }
     & .event-box {
       margin-bottom: 0.6em;
+    }
+    @include media-width-down(md) {
+      font-size: 0.9em;
+    }
+    @include media-width-down(sm) {
+      font-size: 0.8em;
     }
   }
 }
@@ -750,6 +850,12 @@
       @include crossTransform(translate(0, -0.625em));
       opacity: 1;
     }
+  	@include media-width-down(sm) {
+  		font-size: 2.5em;
+  	}
+  	@include media-width-down(xs) {
+  		font-size: 2em;
+  	}
   }
   & p {
     max-width: 970px;
@@ -758,6 +864,8 @@
     font-weight: 600;
     color: #203234;
     text-align: center;
+    padding-left: 15px;
+    padding-right: 15px;
   }
   & .frontdesk-frame {
     margin: 1.5em 0;
@@ -775,7 +883,7 @@
 
   & .agreement-box {
     margin: 0 auto;
-    padding-bottom: 4em;
+    padding: 0 15px 4em;
     max-width: 385px;
   }
 

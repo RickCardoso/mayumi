@@ -218,12 +218,19 @@
 		<section id="images">
 			<div id="image-carousel" class="carousel slide" data-ride="carousel">
 				<div class="carousel-inner">
-					<div class="carousel-item image-item active" style="background-image: url(<?php echo wp_get_attachment_image_url(CFS()->get('our_story_small_image')) ?>)">
+
+				<?php
+
+				$images = CFS()->get('images');
+				$i = 0;
+
+				foreach ($images as $image) : ?>
+
+					<div class="carousel-item image-item<?php echo ($i == 0) ? ' active' : ''; ?>" style="background-image: url(<?php echo $image['image']; ?>)">
 					</div>
-					<div class="carousel-item image-item" style="background-image: url(<?php echo wp_get_attachment_image_url(CFS()->get('our_story_big_image')) ?>)">
-					</div>
-					<div class="carousel-item image-item" style="background-image: url(<?php echo CFS()->get('hero_background'); ?>)">
-					</div>
+
+				<?php $i++; endforeach; ?>
+
 				</div>
 				<div class="page-container">
 					<h1 data-emergence="hidden">Images</h1>
@@ -238,32 +245,33 @@
 							<span class="sr-only">Previous</span>
 						</a>
 					  <div class="carousel-inner">
-					    <div class="carousel-item active">
-								<ol class="thumbnail-indicators">
-									<li data-target="#image-carousel" data-slide-to="0">
-										<?php echo wp_get_attachment_image(CFS()->get('our_story_small_image'), 'full', false, array('class'=>'d-block w-100')) ?>
-									</li>
-									<li data-target="#image-carousel" data-slide-to="1">
-										<?php echo wp_get_attachment_image(CFS()->get('our_story_big_image'), 'full', false, array('class'=>'d-block w-100')) ?>
-									</li>
-									<li data-target="#image-carousel" data-slide-to="2">
-										<img class="d-block w-100" src="<?php echo CFS()->get('hero_background'); ?>" alt="Third slide">
-									</li>
-								</ol>
-							</div>
-							<div class="carousel-item">
-								<ol class="thumbnail-indicators">
-									<li data-target="#image-carousel" data-slide-to="0">
-										<?php echo wp_get_attachment_image(CFS()->get('our_story_small_image'), 'full', false, array('class'=>'d-block w-100')) ?>
-									</li>
-									<li data-target="#image-carousel" data-slide-to="1">
-										<?php echo wp_get_attachment_image(CFS()->get('our_story_big_image'), 'full', false, array('class'=>'d-block w-100')) ?>
-									</li>
-									<li data-target="#image-carousel" data-slide-to="2">
-										<img class="d-block w-100" src="<?php echo CFS()->get('hero_background'); ?>" alt="Third slide">
-									</li>
-								</ol>
-							</div>
+
+							<?php
+
+							$images = CFS()->get('images');
+							$i = 0;
+
+							foreach ($images as $image) :
+
+								if ($i % 3 == 0) : ?>
+
+									<div class="carousel-item<?php echo ($i == 0) ? ' active' : ''; ?>">
+										<ol class="thumbnail-indicators">
+
+								<?php endif; ?>
+
+											<li class="<?php echo ($i == 0) ? 'active' : ''; ?>" data-target="#image-carousel" data-slide-to="<?php echo $i; ?>" style="background-image: url(<?php echo $image['image']; ?>)">
+											</li>
+
+								<?php if ($i % 3 == 2 || $i == count($images) - 1) : ?>
+
+										</ol>
+									</div>
+
+								<?php endif; ?>
+
+							<?php $i++; endforeach; ?>
+
 						</div>
 					</div>
 					<div class="carousel-controls">
