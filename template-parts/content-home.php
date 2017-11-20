@@ -191,11 +191,11 @@
 						</div>
 					</div>
 					<div class="small-col">
-						<div class="icon-group">
+						<!-- <div class="icon-group">
 							<img class="icon" data-emergence="hidden" src="<?php echo get_template_directory_uri(); ?>/svg/icons/clock.png" alt="">
 							<img class="icon" data-emergence="hidden" src="<?php echo get_template_directory_uri(); ?>/svg/icons/people.png" alt="">
 							<img class="icon" data-emergence="hidden" src="<?php echo get_template_directory_uri(); ?>/svg/icons/change.png" alt="">
-						</div>
+						</div> -->
 						<div class="text-block">
 							<?php echo CFS()->get('our_story_row_1') ?>
 						</div>
@@ -204,10 +204,10 @@
 							<?php echo wp_get_attachment_image(CFS()->get('our_story_small_image'), 'full', false, array('class'=>'img-fluid')) ?>
 							<div class="block-1" data-emergence="hidden"></div>
 						</div>
-						<div class="icon-group bottom">
+						<!-- <div class="icon-group bottom">
 							<img class="icon" data-emergence="hidden" src="<?php echo get_template_directory_uri(); ?>/svg/icons/wifi.png" alt="">
 							<img class="icon" data-emergence="hidden" src="<?php echo get_template_directory_uri(); ?>/svg/icons/crown.png" alt="">
-						</div>
+						</div> -->
 					</div>
 				</div>
 
