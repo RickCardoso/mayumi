@@ -29,3 +29,12 @@
 	max-width: $size__site-max;
 	margin: auto;
 }
+
+.btn-container {
+	text-align: center;
+  padding: 0 15px 6em;
+	& a {
+		display: inline-block;
+		margin: 0 1em 1em;
+	}
+}
