@@ -31,9 +31,7 @@
 		<nav class="navbar navbar-expand footer-navigation">
 			<div class="company-hq">
 				<span>
-					5630 Sawtelle Blvd,<br />
-					Culver City, CA<br />
-					90230
+					5630 Sawtelle Blvd, Culver City, CA 90230
 				</span>
 			</div><!-- .company-hq -->
 

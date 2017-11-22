@@ -136,12 +136,22 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 		<section id="community">
+
+		<?php
+
+		if (CFS()->get('contact_us_image')) : ?>
+
 			<div class="heading-image" style="background-image: url(<?php echo CFS()->get('contact_us_image') ?>)">
 			</div>
 
+		<?php endif; ?>
+
 			<div class="page-container">
 
-				<h1 class="section-title" data-emergence="hidden">Comm<b>unity</b></h1>
+				<h1 class="section-title mayumi-title" data-emergence="hidden">
+					<img src="" alt="">
+					<b>Community</b>
+				</h1>
 
 				<div class="news-container">
 					<div class="row">
