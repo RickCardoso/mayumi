@@ -1,0 +1,89 @@
+#contact-us {
+  padding-top: 81px;
+  margin-bottom: 3em;
+  @include media-width-down(md) {
+    padding-top: 78px;
+  }
+  @include media-width-down(sm) {
+    padding-top: 67px;
+  }
+  @include media-width-down(xs) {
+    padding-top: 41px;
+  }
+  & .page-container {
+    position: relative;
+  }
+  & h1.section-title {
+    margin: auto;
+    max-width: 581px;
+    width: 100%;
+    height: 152px;
+    padding-top: 1em;
+    font-size: 3em;
+    &[data-emergence=hidden] {
+      opacity: 0;
+    }
+    &[data-emergence=visible] {
+      @include crossTransform(translate(0, -0.625em));
+      opacity: 1;
+    }
+  }
+  & .form-container {
+    padding-left: 15px;
+    padding-right: 15px;
+    max-width: 1085.5px;
+    margin: auto;
+    & .row {
+      margin: 0 -33px;
+    }
+    & .form-col-3 {
+      @include make-col-ready;
+      @include make-col(1, 3);
+      padding: 0 33px;
+      @include media-width-down(sm) {
+        @include make-col(1, 1);
+      }
+    }
+    & .form-col-2 {
+      @include make-col-ready;
+      @include make-col(1, 2);
+      padding: 0 33px;
+      @include media-width-down(sm) {
+        @include make-col(1, 1);
+      }
+    }
+    & input,
+    & textarea {
+      font-size: 1.375em;
+      margin-top: 2.75em;
+    }
+    & p {
+      margin-top: 1.5em;
+      margin-bottom: 2em;
+      font-size: 1em;
+      color: #203234;
+      opacity: 0.7;
+    }
+    & .btn-blue {
+      margin: auto;
+      display: block;
+      max-width: 192px;
+      width: 100%;
+      height: 60px;
+      font-size: 1.1875em;
+    }
+    @include media-width-down(md) {
+      font-size: 0.9em;
+      & .row {
+        margin: 0 -15px;
+      }
+      & .form-col-3,
+      & .form-col-2 {
+        padding: 0 15px;
+      }
+    }
+    @include media-width-down(sm) {
+      font-size: 0.8em;
+    }
+  }
+}
