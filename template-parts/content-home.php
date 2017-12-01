@@ -82,41 +82,67 @@
 	<div class="heading-image" style="background-image: url(<?php echo CFS()->get('book_now_image') ?>)"></div>
 	<h1 class="section-title"><strong>Membership</strong> & <strong>Booking</strong></h1>
 	<p><?php echo CFS()->get('book_now_text'); ?></p>
-	<iframe id="frontdesk-frame" src="https://bookings.frontdeskanywhere.net/bookings/#/account/1ZN170724A";;; style="border: none;" frameborder="0" width="100%" height="657px" scrolling="no"></iframe>
+	<div class="frontdesk-container" style="display: none;">
+		<iframe id="frontdesk-frame" src="https://bookings.frontdeskanywhere.net/bookings/#/account/1ZN170724A";;; style="border: none;" frameborder="0" width="100%" height="657px" scrolling="no"></iframe>
+	</div>
 	<h2>Agreements</h2>
-	<?php
 
-	$agreements = CFS()->get('agreements');
-
-	$i = 1;
-
-	foreach ($agreements as $agreement) : ?>
-
-		<div class="agreement-box">
-
-		  <a class="agreement-accordion" data-toggle="collapse" href="#agreement-<?php echo $i; ?>-content" aria-expanded="false" aria-controls="agreement-<?php echo $i; ?>-content">
-		    <?php echo $agreement['title']; ?>
-				<i class="fa fa-chevron-down"></i>
-		  </a>
-			<div class="collapse" id="agreement-<?php echo $i; ?>-content">
-			  <div class="agreement-content">
-			    <?php echo $agreement['content']; ?>
-			  </div>
+	<div role="form" class="wpcf7" id="wpcf7-f77-p11-o1" lang="en-US" dir="ltr">
+		<div class="screen-reader-response"></div>
+		<form action="/projects/mayumi/#wpcf7-f77-p11-o1" method="post" class="wpcf7-form pb-5" novalidate="novalidate" id="agreement-form">
+			<div style="display: none;">
+				<input type="hidden" name="_wpcf7" value="77">
+				<input type="hidden" name="_wpcf7_version" value="4.9.1">
+				<input type="hidden" name="_wpcf7_locale" value="en_US">
+				<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f77-p11-o1">
+				<input type="hidden" name="_wpcf7_container_post" value="11">
 			</div>
-			<label class="checkbox" for="agreement-<?php echo $i; ?>">
-				<input type="checkbox" id="agreement-<?php echo $i; ?>" value="agreement-<?php echo $i; ?>-val">
-				<span class="checkmark"></span>
-				<?php echo $agreement['legal_statement']; ?>
-			</label>
-			<!-- <form class="check-agree" action="javascript:void(0);" method="post">
-				<input type="checkbox" name="agreement-<?php echo $i; ?>" value="">
-			</form> -->
+			<div class="agreement-box">
+			  <span class="wpcf7-form-control-wrap email"><input type="email" name="email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Email"></span>
+			</div>
 
-		</div>
+			<?php
 
-	<?php
-	$i++;
-	endforeach; ?>
+			$agreements = CFS()->get('agreements');
+
+			$i = 1;
+
+			foreach ($agreements as $agreement) : ?>
+
+			<div class="agreement-box">
+			  <a class="agreement-accordion" data-toggle="collapse" href="#agreement-<?php echo $i; ?>-content" aria-expanded="false" aria-controls="agreement-<?php echo $i; ?>-content"><?php echo $agreement['title']; ?><i class="fa fa-chevron-down"></i></a>
+				<div class="collapse" id="agreement-<?php echo $i; ?>-content">
+					<div class="agreement-content">
+						<?php echo $agreement['content']; ?>
+					</div>
+				</div>
+			 	<label class="checkbox" for="agreement_<?php echo $i; ?>">
+			    <span class="wpcf7-form-control-wrap agreement_<?php echo $i; ?>">
+						<span class="wpcf7-form-control wpcf7-checkbox wpcf7-validates-as-required">
+							<span class="wpcf7-list-item first last">
+								<input type="checkbox" id="agreement_<?php echo $i; ?>" name="agreement_<?php echo $i; ?>[]" value="I agree with agreement <?php echo $i; ?>">
+								<span class="checkmark"></span>
+								<span class="wpcf7-list-item-label">
+									<?php echo $agreement['legal_statement']; ?>
+								</span>
+							</span>
+						</span>
+					</span>
+			  </label>
+			</div>
+
+			<?php
+			$i++;
+			endforeach; ?>
+
+			<div class="agreement-box text-center mb-5">
+			  <input type="submit" value="I Agree" class="btn-std btn-blue btn-agree">
+				<span class="ajax-loader"></span>
+				<div class="wpcf7-response-output wpcf7-display-none mx-0"></div>
+			</div>
+		</form>
+	</div>
+
 </div>
 <!---->
 

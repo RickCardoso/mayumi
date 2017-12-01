@@ -21,6 +21,7 @@ input[type="submit"] {
 	}
 }
 
+input[type="submit"],
 .btn-std {
 	@include crossBorder(2px);
 	@include crossTransition(all .3s);
@@ -34,6 +35,7 @@ input[type="submit"] {
 	}
 }
 
+input[type="submit"].btn-blue,
 .btn-blue {
 	background-color: #33b8c8;
 	color: #213133;
@@ -46,6 +48,11 @@ input[type="submit"] {
 		color: #213133;
 		background-color: lighten(#33b8c8, 5%);
 		@include crossShadow(3.7px 3.7px 18px 0 rgba(119, 119, 119, 0.55));
+	}
+	&:disabled {
+		background-color: #ccc;
+		color: #999;
+		@include crossShadow(none);
 	}
 }
 

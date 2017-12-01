@@ -136,4 +136,12 @@ $(document).ready(function() {
     $(this).parent().find('.agreement-accordion').find('svg').addClass('fa-rotate-180');
   });
 
+
+  // check I Agree conditions
+  $(document).ajaxComplete( function() {
+    if ($('.wpcf7-response-output').text() == "Thank you for agreeing with our terms. You may proceed with booking.") {
+      $('.frontdesk-container').slideDown();
+    }
+  });
+
 });

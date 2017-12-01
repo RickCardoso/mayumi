@@ -31,6 +31,11 @@ textarea {
 		outline: none;
 	}
 
+	&:invalid {
+		border-bottom-color: #ef1b20;
+		color: #d83f3f;
+	}
+
 	&::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color: $color__text-input;
 		opacity: 0.7;
@@ -65,16 +70,19 @@ textarea {
 label.checkbox {
 	margin-top: 2.25em;
 	margin-bottom: 2.25em;
-  display: flex;
-	justify-content: flex-start;
-	align-items: center;
-  position: relative;
   cursor: pointer;
 	font-size: 0.875em;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+
+	& .wpcf7-list-item {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		position: relative;
+	}
 
 	& input {
 	  position: absolute;
@@ -116,6 +124,19 @@ label.checkbox {
 		}
 	}
 
+	& .wpcf7-list-item-label {
+		flex: 1;
+	}
+
+	& span.wpcf7-list-item {
+		margin: 0;
+		text-align: left;
+	}
+
+	& span.wpcf7-not-valid-tip {
+		top: 100%;
+	}
+
 	&:hover {
 		& .checkmark {
 		  background-color: #ccc;
@@ -132,4 +153,21 @@ label.checkbox {
 			}
 		}
 	}
+}
+
+.error.help-block {
+	color: #ef1b20;
+	font-size: 0.9em;
+}
+
+span.wpcf7-not-valid-tip {
+	font-style: italic;
+	font-weight: 300;
+	font-size: 0.9em;
+	text-align: left;
+	position: absolute;
+	top: 180%;
+	left: 0;
+	width: 100%;
+	min-width: 200px;
 }
